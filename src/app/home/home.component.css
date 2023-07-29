@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Establece el contenedor para que tenga al menos el 100% de la altura de la ventana visible (viewport height) */
+}
+
+
+.btn{
+  margin: 30px;
+}
+
+
+/* Establece un ancho para el contenedor del slider */
+.slider-container {
+  max-width: 100px; /* Ajusta este valor según tus necesidades */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  display: flex; /* Utiliza flexbox para centrar la imagen */
+  justify-content: center; /* Centra horizontalmente la imagen */
+  align-items: center; /* Centra verticalmente la imagen */
+}
+
+
+/* Establece el ancho deseado para la imagen del slider */
+.img-slider {
+  width: 100%; /* La imagen ocupará el 100% del ancho disponible en su contenedor */
+  height: auto; /* La altura se ajustará automáticamente según el ancho para mantener la proporción original de la imagen */
+}
+
+.justificado {
+  text-align: justify;
+}
