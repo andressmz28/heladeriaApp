@@ -93,15 +93,16 @@
   }
 /* Estilos personalizados para el formulario */
 .form {
-  width: 100vw; /* Cambiamos el valor a 100vw para que ocupe el ancho de la ventana */
-  max-width: 350px;
-  margin: 0 auto;
+  width: 100%; /* Cambiamos el valor a 100% para que ocupe todo el ancho disponible */
   background-color: #fff;
   padding: 20px;
   border-radius: 20px;
   position: relative;
   box-sizing: border-box;
+  margin: 0; /* Eliminamos cualquier margen adicional */
 }
+
+
 /* Estilos personalizados para el título */
 .title {
   font-size: 28px;
@@ -119,6 +120,7 @@
 
 /* Estilos personalizados para el botón de submit */
 .submit {
+  width: 100%; /* Hacemos que el botón ocupe todo el ancho del formulario */
   border: none;
   outline: none;
   background-color: royalblue;
@@ -128,6 +130,7 @@
   font-size: 16px;
   transform: .3s ease;
 }
+
 
 .submit:hover {
   background-color: rgb(56, 90, 194);
