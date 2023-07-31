@@ -7,40 +7,28 @@
 <div div class="container mt-4 text-center">
   <div id="Welcome">
     <!---Start navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar fixed-top  navbar-light bg-light">
-     <a class="navbar-brand" href="#Welcome">
+    <nav class="navbar navbar-fixed-top navbar-light bg-light">
+      <a class="navbar-brand" href="#Welcome">
         <img src="assets/images/helados-wow-_1_.png" width="50" height="50" class="d-inline-block" alt=""> Helados WOW
-     </a>
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-     </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#Welcome">Bienvenidos</a>
-            </li>
-          <li class="nav-item">
-          <a class="nav-link" routerLink="/hacer-pedido">Hacer Pedido</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/ver-pedido">Ver Pedido</a>
-          </li>
-          <button class="button" routerLink="/iniciar-sesion">
-            <span>Iniciar Sesion</span>
-            <svg width="15" height="15" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linejoin="round" stroke-linecap="round"></path>
-            </svg>
-          </button>
+      </a>
+      <div class="ml-auto d-flex align-items-center"> <!-- Updated the <ul> to a <div> with class "ml-auto d-flex align-items-center" -->
+        <a class="shopping-container" routerLink="/hacer-pedido">
+          <div class="shopping shopping2">
+            <i class="fas fa-shopping-basket"></i>
           
-          
-          
-          
-       
-          
-         
-        </ul>
-    </div>
-  </nav>
+          </div>
+        </a>
+        <button class="button" routerLink="/iniciar-sesion">
+          <span>Iniciar Sesion</span>
+          <svg width="15" height="15" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linejoin="round" stroke-linecap="round"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    
+    
+    
   <!--- End Navigation Bar -->
   <!--- Start Carousel -->
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -86,41 +74,37 @@
   </div>
   <!--- End of Carousel -->
   <!--- Restaurant-->
-  <div class="container">
-   <div class="row" id="Restaurant">
-      <div class="col navMenu">
-          <h2 class="text-center" >....</h2>
-      </div>
-    </div>
-    <div class="row bg-light" >
+  <div class="container" id="restaurant-section">
+    <div class="row">
       <div class="col-md-6">
         <br><br><br>
         <h3>Helado a la Plancha</h3>
-        <p>Es una tecnica artesanal de elaboracion Tailandesa motivo por el que le conocemos como helado Tailandes.</p>
+        <p>Es una técnica artesanal de elaboración Tailandesa motivo por el que le conocemos como helado Tailandes.</p>
         <br><br>
-        <h5>Una Experiencia Unica</h5>
-        <p class="justificado">Esta hecho a base de crema natural con ingredientes especiales, se mezcla en la plancha a menos 20 grados se estira y se saca en rollitos permitiendo la adicion de toppings, fruta fresca al gusto del consumidor. </p>
+        <h5>Una Experiencia Única</h5>
+        <p class="justificado">Está hecho a base de crema natural con ingredientes especiales, se mezcla en la plancha a menos 20 grados se estira y se saca en rollitos permitiendo la adición de toppings, fruta fresca al gusto del consumidor. </p>
       </div>
       <div class="col-md-6" data-aos="fade-up">
         <img class="img-fluid" src="assets/images/location.jpg">
       </div>
     </div>
-    <div class="row bg-light"><br></div>
-    <div class="row bg-light">
+    <div class="row"><br></div>
+    <div class="row">
       <div class="col-md-6 order-md-1 order-2" data-aos="fade-up">
-       
+  
       </div>
       <div class="col-md-6 order-md-12 order-1">
-        <h3>Estamos dirigidos a toda la poblacion</h3>
-
+        <h3>Estamos dirigidos a toda la población</h3>
+  
         <h6>No contiene conservadores, saborizantes ni colorantes</h6>
-        <p>Jovenes de: 2 hasta 17 años</p>
+        <p>Jóvenes de: 2 hasta 17 años</p>
         <p>Adultos de: 18 hasta 90 años</p>
         <br><br><br>
-        
+  
       </div>
     </div>
-
+  </div>
+  
 
 
     <!--- End of Restaurant -->
@@ -196,31 +180,67 @@
   <!--- End of Menu -->
 
     <img class="img-fluid" src="assets/images/wall.jpg">
-<br><br><br><br><br><br><br>
+
 
 
   <!--- End of Reserve -->
-  <!--- Start of Our Location -->
-  <div class="row" id="OurLocation">
-    <div class="col navMenu">
-      <h2 class="text-center">~ Buscanos ~</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-      <h3>Calle:</h3>
-      <p>Test street no 78963 </p>
-      <h3>Email:</h3>
-      <p>mail@example.com</p>
-    </div>
-    <div class="col-md-3">
-      <h3>Telefono:</h3>
-      <p>301 2415660 </p>
-      <h3>Email:</h3>
-      <p>email@example.com</p>
-    </div>
+  
     
+      <!-- info area -->
     
+      <div class="info-area padding-top-110">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="common-title4 common-title-area text-center wow fadeInUp">
+                        <h3>get in touch</h3>
+                        <h2>contact <span>
+                                us</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top-50">
+                <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay=".2s">
+                    <div
+                        class="single-info d-flex flex-sm-row flex-md-column flex-lg-row justify-content-around align-items-center meddy-bg">
+                        <div class="info-img">
+                            <img src="assets/images/img/ice-icon8.png" alt="">
+                        </div>
+                        <div class="info-content text-center text-lg-left">
+                            <h5>Phone Us 24/7</h5>
+                            <p>123-5879406</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay=".4s">
+                    <div
+                        class="single-info d-flex flex-sm-row flex-md-column flex-lg-row  justify-content-around align-items-center meddy-deep-bg">
+                        <div class="info-img">
+                            <img src="assets/images/img/ice-icon8.png" alt="">
+                        </div>
+                        <div class="info-content text-center text-lg-left">
+                            <h5>Get Direction</h5>
+                            <p>Sector:7, Road:27, House:18,
+                                Uttara, Dhaka, 1230 Dhaka.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay=".6s">
+                    <div
+                        class="single-info d-flex flex-sm-row flex-md-column flex-lg-row  justify-content-around align-items-center purple-lite-bg">
+                        <div class="info-img">
+                            <img src="assets/images/img/ice-icon8.png" alt="">
+                        </div>
+                        <div class="info-content text-center text-lg-left">
+                            <h5>Opening Hours</h5>
+                            <p>Everyday 11.00 PM - 11.00 AM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
   <!--- End of Our Location -->
   <div class="row footer bg-light">
     <div class="col">
