@@ -1,189 +1,186 @@
-
-  
-
-  .title::before,.title::after {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    left: 0px;
-    background-color: royalblue;
-  }
-  
-  .title::before {
-    width: 18px;
-    height: 18px;
-    background-color: royalblue;
-  }
-  
-  .title::after {
-    width: 18px;
-    height: 18px;
-    animation: pulse 1s linear infinite;
-  }
-  
-  .message, .signin {
-    color: rgba(88, 87, 87, 0.822);
-    font-size: 14px;
-  }
-  
-  .signin {
-    text-align: center;
-  }
-  
-  .signin a {
-    color: royalblue;
-  }
-  
-  .signin a:hover {
-    text-decoration: underline royalblue;
-  }
-  
-  
-  
-  .form label {
-    position: relative;
-  }
-  
-  .form label .input {
-    width: 100%;
-    padding: 10px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
-  }
-  
-  .form label .input + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-  }
-  
-  .form label .input:placeholder-shown + span {
-    top: 15px;
-    font-size: 0.9em;
-  }
-  
-  .form label .input:focus + span,.form label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
-  }
-  
-  .form label .input:valid + span {
-    color: green;
-  }
-  
-
-  @keyframes pulse {
-    from {
-      transform: scale(0.9);
-      opacity: 1;
-    }
-  
-    to {
-      transform: scale(1.8);
-      opacity: 0;
-    }
-  }
-/* Estilos personalizados para el formulario */
-.form {
-  width: 100vw; /* Cambiamos el valor a 100vw para que ocupe el ancho de la ventana */
-  max-width: 350px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 20px;
-  position: relative;
-  box-sizing: border-box;
-}
-/* Estilos personalizados para el título */
-.title {
-  font-size: 28px;
-  color: royalblue;
-  font-weight: 600;
-  letter-spacing: -1px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding-left: 30px;
+.title::before,.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: #eb636b;
 }
 
-/* Resto de los estilos se mantienen igual */
-/* ... */
-
-/* Estilos personalizados para el botón de submit */
-.submit {
-  border: none;
-  outline: none;
-  background-color: royalblue;
-  padding: 10px;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 16px;
-  transform: .3s ease;
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: #eb636b;
 }
 
-.submit:hover {
-  background-color: rgb(56, 90, 194);
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
 }
 
-.form-container {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.message {
-  font-size: 16px;
-  color: #888888;
-}
-
-.flex {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.form label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.form input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-}
-
-.submit {
-  width: 100%;
-  padding: 12px;
-  background-color: rgb(56, 90, 194) ;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.message, .signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
 }
 
 .signin {
-  font-size: 14px;
-  color: #888888;
+  text-align: center;
 }
 
 .signin a {
-  color: #6bc4ff;
-  text-decoration: none;
+  color: #eb636b;
+}
+
+.signin a:hover {
+  text-decoration: underline #eb636b;
+}
+
+
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,.form label .input:valid + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input:valid + span {
+  color: green;
+}
+
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+/* Estilos personalizados para el formulario */
+.form {
+width: 100%; /* Cambiamos el valor a 100% para que ocupe todo el ancho disponible */
+background-color: #fff;
+padding: 20px;
+border-radius: 20px;
+position: relative;
+box-sizing: border-box;
+margin: 0; /* Eliminamos cualquier margen adicional */
+}
+
+
+/* Estilos personalizados para el título */
+.title {
+font-size: 28px;
+color: #eb636b;
+font-weight: 600;
+letter-spacing: -1px;
+position: relative;
+display: flex;
+align-items: center;
+padding-left: 30px;
+}
+
+
+.submit {
+width: 100%; 
+border: none;
+outline: none;
+background-color: #eb636b;
+padding: 10px;
+border-radius: 10px;
+color: #fff;
+font-size: 16px;
+transform: .3s ease;
+}
+
+
+.submit:hover {
+background-color: #eb636b;
+}
+
+.form-container {
+background-color: #ffffff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+font-size: 24px;
+font-weight: bold;
+}
+
+.message {
+font-size: 16px;
+color: #888888;
+}
+
+.flex {
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+
+.form label {
+display: block;
+margin-bottom: 10px;
+}
+
+.form input {
+width: 100%;
+padding: 10px;
+border: 1px solid #dddddd;
+border-radius: 5px;
+}
+
+.submit {
+width: 100%;
+padding: 12px;
+background-color: #eb636b ;
+color: #ffffff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.signin {
+font-size: 14px;
+color: #888888;
+}
+
+.signin a {
+color: #eb636b;
+text-decoration: none;
 }
