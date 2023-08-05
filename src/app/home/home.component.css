@@ -1,3 +1,7 @@
+.fondo-blanco {
+  color: white;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -12,29 +16,26 @@
   margin: 30px;
 }
 
-/* Establece un ancho para el contenedor del slider */
 .slider-container {
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  display: flex; /* Utiliza flexbox para centrar la imagen */
-  justify-content: center; /* Centra horizontalmente la imagen */
-  align-items: center; /* Centra verticalmente la imagen */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Establece el ancho deseado para la imagen del slider */
 .img-slider {
-  width: 100%; /* La imagen ocupará el 100% del ancho disponible en su contenedor */
-  height: auto; /* La altura se ajustará automáticamente según el ancho para mantener la proporción original de la imagen */
+  width: 100%;
+  height: auto;
 }
 
 .justificado {
   text-align: justify;
 }
 
-/* En tu archivo de estilos CSS personalizado */
 .img-mas-grande {
-  width: 100%; /* La imagen ocupará todo el ancho del contenedor */
-  height: 5%; /* La imagen ocupará todo el alto del contenedor */
-  object-fit: cover; /* La imagen se ajustará para llenar todo el contenedor sin recortar */
+  width: 100%;
+  height: 5%;
+  object-fit: cover;
 }
 button.button {
   display: flex;
@@ -62,8 +63,6 @@ button.button:hover {
   transform: translateY(-5px);
 }
 
-/* Estilos para el enlace de shopping con la clase "shopping shopping2" */
-/* Estilos para el enlace de shopping con la clase "shopping shopping2" */
 .shopping-container {
   position: relative;
   display: inline-block;
@@ -88,10 +87,19 @@ button.button:hover {
   color: #76459d;
 }
 .common-title4 h2 span {
-  color: #76459d;
+  color: #eb636b;
 }
+
+.container .common-title-area.padding-50 h3 {
+  color: #df4a64;
+}
+
+.common-title-area.padding-50 h2 span {
+  color: #df4a64; /* Cambia este valor al color deseado */
+}
+
 .common-title4 h3 {
-  color: #76459d;
+  color: #eb636b;
 }
 .info-area {
   position: relative;
@@ -201,8 +209,22 @@ button.button:hover {
   border-radius: 10px;
 }
 
+.menu-area.home2-menu-area.padding-bottom-10 {
+  position: relative;
+}
 
-
+.menu-area.home2-menu-area.padding-bottom-10:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/fondo0.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
 
 .menu-area .menu-nav-wrapper .nav-link.active .single-menu-nav::after {
   position: absolute;
@@ -211,7 +233,8 @@ button.button:hover {
   height: 100%;
   top: 0;
   left: 0;
-  background: #c33;
+
+  background: #df4a64;
   visibility: visible;
   opacity: 0.9;
   z-index: -1;
@@ -272,9 +295,6 @@ button.button:hover {
   }
 }
 
-
-
-
 .menu-area .menu-items-wrapper .menu-i-shapes img {
   width: 75px;
 }
@@ -299,15 +319,15 @@ button.button:hover {
   bottom: 0;
 }
 .menu-area .menu-items-wrapper hr {
-  border: 1px dashed #e6e6e6;
+  border: 1px dashed #df4a64;
 }
 .menu-area .menu-items-wrapper a.btn {
   text-align: center;
 }
 .menu-area .menu-items-wrapper a.btn:hover {
-  border: 1px solid #c33;
+  border: 1px solid #df4a64;
   background: transparent;
-  color: #c33;
+  color: ea899a;
 }
 .single-menu-nav {
   width: 150px;
@@ -384,7 +404,7 @@ button.button:hover {
   left: 0;
   visibility: hidden;
   opacity: 0;
-  background: #c33;
+  background: #df4a64;
   transition: 0.5s;
 }
 .single-menu-nav:hover .g-s-4 {
@@ -469,7 +489,7 @@ button.button:hover {
   transition: 0.3s;
 }
 .single-menu-item .menu-content h5 a:hover {
-  color: #c33;
+  color: #df4a64;
 }
 .single-menu-item .menu-content p {
   text-transform: capitalize;
@@ -488,12 +508,6 @@ button.button:hover {
   font-weight: 400;
   font-size: 14px;
 }
-
-
-
-
-
-
 
 .home2-menu-area {
   position: relative;
@@ -519,8 +533,8 @@ button.button:hover {
 }
 .home2-menu-area .menu-shapes .ds-2 {
   position: absolute;
-  right: 1%;
-  bottom: 38%;
+  right: -9%;
+  bottom: 40%;
 }
 .home2-menu-area .menu-shapes .ds-3 {
   position: absolute;
@@ -545,7 +559,7 @@ button.button:hover {
   height: 100%;
   top: 0;
   left: 0;
-  background: #c33;
+  background: #fff6f6;
   visibility: visible;
   opacity: 0.9;
   z-index: -1;
@@ -603,7 +617,7 @@ button.button:hover {
   .menu-content
   h6
   a:hover {
-  color: #c33;
+  color: #eb636b;
 }
 .home2-menu-area .menu-items-wrapper .single-menu-item .menu-content span {
   font-weight: 700;
@@ -611,13 +625,8 @@ button.button:hover {
 .home2-menu-area .menu-items-wrapper .single-menu-item:hover {
   box-shadow: 0px 25px 60px 0px rgba(0, 21, 100, 0.1);
   border: 1px solid transparent;
-
 }
 
-
-/* Agrega aquí tus estilos existentes */
-
-/* Estilos para el funcionamiento de los tabs */
 .nav-link {
   cursor: pointer;
 }
