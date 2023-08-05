@@ -8,13 +8,13 @@
     width: 16px;
     border-radius: 50%;
     left: 0px;
-    background-color: royalblue;
+    background-color: #eb636b;
   }
   
   .title::before {
     width: 18px;
     height: 18px;
-    background-color: royalblue;
+    background-color: #eb636b;
   }
   
   .title::after {
@@ -33,11 +33,11 @@
   }
   
   .signin a {
-    color: royalblue;
+    color: #eb636b;
   }
   
   .signin a:hover {
-    text-decoration: underline royalblue;
+    text-decoration: underline #eb636b;
   }
   
   
@@ -106,7 +106,7 @@
 /* Estilos personalizados para el título */
 .title {
   font-size: 28px;
-  color: royalblue;
+  color: #eb636b;
   font-weight: 600;
   letter-spacing: -1px;
   position: relative;
@@ -115,15 +115,12 @@
   padding-left: 30px;
 }
 
-/* Resto de los estilos se mantienen igual */
-/* ... */
 
-/* Estilos personalizados para el botón de submit */
 .submit {
-  width: 100%; /* Hacemos que el botón ocupe todo el ancho del formulario */
+  width: 100%; 
   border: none;
   outline: none;
-  background-color: royalblue;
+  background-color: #eb636b;
   padding: 10px;
   border-radius: 10px;
   color: #fff;
@@ -133,7 +130,7 @@
 
 
 .submit:hover {
-  background-color: rgb(56, 90, 194);
+  background-color: #eb636b;
 }
 
 .form-container {
@@ -174,7 +171,7 @@
 .submit {
   width: 100%;
   padding: 12px;
-  background-color: rgb(56, 90, 194) ;
+  background-color: #eb636b ;
   color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -187,6 +184,6 @@
 }
 
 .signin a {
-  color: #6bc4ff;
+  color: #eb636b;
   text-decoration: none;
 }
