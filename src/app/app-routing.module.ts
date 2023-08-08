@@ -7,6 +7,7 @@ import { HacerPedidoComponent } from './hacer-pedido/hacer-pedido.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'pedido', component: PedidoComponent },
   { path: 'hacer-pedido', component: HacerPedidoComponent },
   { path: 'ver-pedido', component: VerPedidoComponent },
 ];

@@ -8,6 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { HacerPedidoComponent } from './hacer-pedido/hacer-pedido.component';
 import { VerPedidoComponent } from './ver-pedido/ver-pedido.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; // Importa FormsModule
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { VerPedidoComponent } from './ver-pedido/ver-pedido.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

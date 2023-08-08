@@ -1,1 +1,28 @@
-<p>pedido works!</p>
+<div class="container text-center pt-5">
+  <div class="row" style="height: 100px;">
+    <div class="col">
+      <h2>Pedido</h2>
+    </div>
+  </div>
+  <div class="row"style="padding-bottom: 80px;">
+    <div class="col-6">
+      <h4>Helado:</h4>
+
+      <select class="form-select" >
+        <option disabled selected [ngValue]="null">Selecciona un helado</option>
+        <option *ngFor="let helado of helados" [value]="helado.id">{{ helado.nombre }}</option>
+      </select>
+
+    </div>
+    <div class="col-6">
+      <h4>Endulsante:</h4>
+      <select class="form-select">
+        <option disabled selected [ngValue]="null">Selecciona una opcion</option>
+        <option value="1">Si</option>
+        <option value="0">No</option>
+      </select>
+    </div>
+
+  </div>
+
+</div>
