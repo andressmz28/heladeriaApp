@@ -15,7 +15,9 @@ export class HacerPedidoComponent implements OnInit {
   selectedSalsa: any;
   selectedTopings: any[] = [];
   selectedLicor: any;
+  selectedHelado: any;
 
+  helados: any[] = [];
   dulces: any[] = [];
   especiales: any[] = [];
   frutas: any[] = [];
@@ -28,6 +30,9 @@ export class HacerPedidoComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.apiService.getHelados().subscribe((data: any[]) => {
+      this.helados = data;
+    });
     this.apiService.getDulces().subscribe((data: any[]) => {
       this.dulces = data;
     });
