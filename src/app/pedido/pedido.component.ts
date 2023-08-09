@@ -7,16 +7,10 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./pedido.component.css']
 })
 export class PedidoComponent {
-  selectedHelado: any;
-  helados: any[] = [];
+
 
   constructor(private apiService: ApiService) { }
 
-  ngOnInit(): void {
-    this.apiService.getHelados().subscribe((data: any[]) => {
-      this.helados = data;
-    });
-  }
 
 
 }
