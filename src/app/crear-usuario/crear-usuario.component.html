@@ -1,8 +1,18 @@
-<div class="container-fluid d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #f7f7f7;">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../crear-usuario/crear-usuario.component.css">
+ 
+</head>
+<body>
+
+<div class="container-fluid background-image-container d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #f7f7f7;">
   <div class="form-container">
     <form class="form">
       <p class="title">Registro</p>
-      <p class="message" style="font-size: 11px;">Regístrese ahora y obtenga acceso completo a nuestra aplicación.</p>
+      <p class="message" style="font-size: 17px;">Regístrese ahora y obtenga acceso completo a nuestra aplicación.</p>
 
       <div class="flex">
         <label>
@@ -29,8 +39,9 @@
         <input required="" placeholder="" type="password" class="input">
         <span>Confirmar contraseña</span>
       </label>
-      <button class="submit">Aceptar</button>
-      <p class="signin">¿Ya tienes una cuenta? <a href="#" routerLink="/iniciar-sesion">Iniciar Sesion</a></p>
+      <button class="submit" routerLink="">Aceptar</button>
+      <p class="signin" style="font-size: 17px;">¿Ya tienes una cuenta? <a href="" >Iniciar Sesion</a></p>
     </form>
   </div>
 </div>
+<app-footer></app-footer>

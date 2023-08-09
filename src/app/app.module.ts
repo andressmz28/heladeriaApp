@@ -13,10 +13,13 @@ import { VerPedidoComponent } from './ver-pedido/ver-pedido.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; // Importa FormsModule
 import { ReactiveFormsModule } from '@angular/forms';
+import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+
 
 
 @NgModule({
   declarations: [
+    CrearUsuarioComponent,
     AppComponent,
     HeladosComponent,
     HomeComponent,

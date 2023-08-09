@@ -14,6 +14,7 @@
   background-color: #eb636b;
 }
 
+
 .title::after {
   width: 18px;
   height: 18px;
@@ -22,11 +23,12 @@
 
 .message, .signin {
   color: rgba(88, 87, 87, 0.822);
-  font-size: 14px;
+  font-size: 22px;
 }
 
 .signin {
   text-align: center;
+  
 }
 
 .signin a {
@@ -37,6 +39,13 @@
   text-decoration: underline #eb636b;
 }
 
+.background-image-container {
+  position: relative;
+  background-image: url("../../assets/images/pl.jpg"); 
+  background-size: cover ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 
 .form label {
@@ -45,7 +54,7 @@
 
 .form label .input {
   width: 100%;
-  padding: 10px 10px 20px 10px;
+  padding: 15px;
   outline: 0;
   border: 1px solid rgba(105, 105, 105, 0.397);
   border-radius: 10px;
@@ -114,6 +123,7 @@ padding-left: 30px;
 
 
 .submit {
+padding: 15px;
 width: 100%; 
 border: none;
 outline: none;
@@ -121,7 +131,7 @@ background-color: #eb636b;
 padding: 10px;
 border-radius: 10px;
 color: #fff;
-font-size: 16px;
+font-size: 22px;
 transform: .3s ease;
 }
 
@@ -131,10 +141,13 @@ background-color: #eb636b;
 }
 
 .form-container {
-background-color: #ffffff;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Ajustar el ancho del contenedor del formulario */
+  max-width: 600px; /* Ancho máximo del contenedor */
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 40px; /* Aumentar el espacio de relleno */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .title {
@@ -143,7 +156,7 @@ font-weight: bold;
 }
 
 .message {
-font-size: 16px;
+font-size: 22px;
 color: #888888;
 }
 

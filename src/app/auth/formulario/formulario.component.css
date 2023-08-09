@@ -6,6 +6,15 @@
     box-sizing: border-box
 }
 
+.background-image-container {
+    position: relative;
+    background-image: url("../../../assets/images/pl.jpg"); 
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+
 body {
     background-color: #eee;
     height: 100vh;
@@ -14,10 +23,11 @@ body {
 }
 
 .wrapper {
-    max-width: 500px;
+    max-width: 1000px;
     border-radius: 20px;
+  
     margin: 150px auto;
-    padding: 30px 40px;
+    padding:  40px;
     box-shadow: 20px 20px 80px rgb(205, 151, 194)
     
 }
@@ -26,7 +36,7 @@ body {
     font-family: 'Kaushan Script', cursive;
     font-size: 3.5rem;
     font-weight: bold;
-    color: #400485;
+    color: #eb636b;
     font-style: italic
 }
 
@@ -40,13 +50,13 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
-    border: 1px solid #400485;
-    color: #400485
+    border: 1px solid #eb636b;
+    color: #eb636b
 }
 
 .input-field:hover {
-    color: #7b4ca0;
-    border: 1px solid #7b4ca0
+    color: #eb636b;
+    border: 1px solid #eb636b
 }
 
 input {
@@ -66,13 +76,13 @@ input {
 
 a {
     text-decoration: none;
-    color: #400485;
+    color: #eb636b;
     font-weight: 700
 }
 
 a:hover {
     text-decoration: none;
-    color: #7b4ca0
+    color: #eb636b
 }
 
 .option {
@@ -111,7 +121,7 @@ a:hover {
     width: 13px;
     height: 13px;
     display: block;
-    background: #400485;
+    background: #eb636b;
     position: absolute;
     top: 48%;
     left: 53%;
@@ -123,7 +133,7 @@ a:hover {
 .option input[type="radio"]:checked~.checkmark {
     background: #fff;
     transition: 300ms ease-in-out 0s;
-    border: 1px solid #400485
+    border: 1px solid #eb636b
 }
 
 .option input[type="radio"]:checked~.checkmark:after {
@@ -132,12 +142,12 @@ a:hover {
 
 .btn.btn-block {
     border-radius: 20px;
-    background-color: #400485;
+    background-color: #eb636b;
     color: #fff
 }
 
 .btn.btn-block:hover {
-    background-color: #55268be0
+    background-color: #eb636b
 }
 
 @media(max-width: 575px) {
@@ -148,8 +158,8 @@ a:hover {
 
 @media(max-width:424px) {
     .wrapper {
-        padding: 30px 10px;
-        margin: 5px
+        padding: 80px 80px;
+        margin: 20px
     }
 
     .option {
