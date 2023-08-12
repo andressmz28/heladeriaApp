@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+   <!-- <link rel="stylesheet" href="https://fontawesome.com/icons/circle-xmark?f=classic&s=regular&sz=sm&pc=%23ff0909">
+    -->
+    <!-- Agregar el enlace de la fuente desde Google Fonts en el head de tu HTML -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Luckiest+Guy&family=Marck+Script&family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
+
+  </head>
+    <!--
+        //////////////////////////////////////////////// Navegador 
+    -->
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="z-index: 1;">
+        <div class="container-fluid">
+          
+          <a class="navbar-brand" href="#">WOW Gelatto</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        
+      </nav>
+
+    <!--
+        ////////////////////////////////////////////////
+    -->
+<body class="vh-100">
+
+  
+  
+  <div class="container-fluid background-image-container d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #f7f7f7;">
+  
+  
+  
+  
+  
+    <div class="container mt-20 mt-md-5" style="position: relative; z-index: 0;">
+    
+    <div class="card" style="padding-bottom: 20px;">
+      
+      <div class="card-header col d-flex align-items-center justify-content-center fs-5  " >
+        PEDIDOS
+      </div>
+    </div>
+    
+    <div class="card">
+  
+      <div class="card-body" >
+        <div class="row">
+          
+
+          <div class="col-md-1 text-center">
+            <p><strong>id</strong> </p>
+            <blockquote class="text-center">
+              <p class="text-muted"> {{ nPedido }} </p>
+            </blockquote>
+          </div>
+
+          <div class="col-md-2 text-center">
+            <p><strong>Hora:</strong></p>
+            <blockquote class="text-center">
+              <p class="text-muted"> {{ hPedido }}</p>
+            </blockquote>
+          </div>
+
+          <div class="col-md-2 text-center">
+            <p><strong>Detalles:</strong></p>
+            <blockquote class="text-center">
+              <p class="text-muted"> Ver pedido...</p>
+            </blockquote>
+          </div>
+
+          <div class="col-md-3 text-center">
+            <p><strong>Cliente:</strong></p>
+            <blockquote class="text-center">
+              <p class="text-muted"> {{ nCliente }}</p>
+            </blockquote>
+          </div>
+
+          <div class="col-md-2 text-center"> <!-- Agregamos "d-flex", "align-items-center" y "justify-content-center" aquí -->
+            <p><strong>Total:</strong></p>
+            <blockquote class="text-center">
+              <p class="text-muted"> ${{totalCompra }}</p>
+            </blockquote>
+            </div>
+
+            
+            <div class="col-md-2">
+              <div class="icon-container d-flex align-items-center">
+                <i class="fas fa-trash fa-lg icon-trash me-4"></i>
+                <i class="fas fa-check-circle fa-lg icon-check"></i>
+              </div>
+            </div>
+            
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  
+</body>
+</html>

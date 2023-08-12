@@ -13,7 +13,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'hacer-pedido', component: HacerPedidoComponent },
   { path: 'ver-pedido', component: VerPedidoComponent },
-  {path: 'crear-usuario', component: CrearUsuarioComponent}
+  { path: 'crear-usuario', component: CrearUsuarioComponent},
+  { path: 'pedido', component: PedidoComponent }
+  
 ];
 
 @NgModule({

@@ -1,0 +1,143 @@
+body{
+    background: linear-gradient(to bottom right, #f7afe8, #83f5a0); /* Colores del degradado */
+    min-height: 100vh; /* Esto asegura que el degradado se extienda al menos hasta el tamaño de la pantalla */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    padding: 0;
+   
+    justify-content: center;
+    align-items: center;
+    animation: fanimado 5s linear infinite;
+
+} 
+
+.background-image-container {
+  position: relative;
+  background-image: url("../../assets/images/pl.jpg"); 
+  background-size: cover ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card {
+    margin-top: 20px; /* Ajusta el valor según sea necesario */
+  }
+.card-body {
+    padding: 10px;
+  }
+  
+  .card-footer {
+    background-color: #f9f9f9;
+    border-top: none;
+  }
+  
+  .card-header{
+    background-color: #d0a2e5;
+    border-top: none;
+    font-family: 'Merriweather', serif;
+    text-decoration-color: #333;
+    padding: 20px;
+    
+  }
+
+  
+  .card-body{
+    background-color: #f2edf5;
+    border-top: none;
+    font-family: 'Edu SA Beginner', cursive;
+    font-family: 'Merriweather', serif;
+    
+    .card-body .row {
+      margin-bottom: 20px;
+    }
+  }
+
+  
+  /* Estilos para el componente HeladoComponent */
+
+/* Aquí definimos el fondo degradado */
+
+
+.container {
+  background-color: #fbf9fa;
+  padding: 20px; /* Ajusta el padding según tus necesidades */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 80%; /* Ancho máximo del contenedor del componente */
+  max-height: 100%;
+  width: 100%; /* Ancho del contenedor (100% del ancho del contenedor padre) */
+  height: 100%; /* Altura del contenedor, ajusta según tus necesidades */
+}
+  
+  @keyframes fanimado{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+  }
+
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .footer {
+    background-color: #c5dce4;
+    padding: 7px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    color: rgb(199, 221, 227);
+    font-size: 15px;
+
+    
+  }
+
+  .footer-button {
+    background-color: #87d8a5;
+    color: rgb(13, 11, 11);
+    border: none;
+    padding: 5px 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    margin-bottom: 5px; /* Añadido margen inferior */
+    
+  }
+
+  .footer-button:hover {
+    background-color: #0db816;
+  }
+
+  .subtotal {
+    font-weight: bold;
+    margin-bottom: 5px; /* Añadido margen inferior */
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+  }
+
+  .price {
+    font-weight: bold;
+    margin-bottom: 5px; /* Añadido margen inferior */
+    font-size: 19px;
+    color: rgb(5, 104, 30);
+    font-family: 'Edu SA Beginner', cursive;
+    font-family: 'Merriweather', serif;
+  }
