@@ -6,6 +6,7 @@ import { VerPedidoComponent } from "./ver-pedido/ver-pedido.component";
 import { HacerPedidoComponent } from './hacer-pedido/hacer-pedido.component';
 import { FormularioComponent } from './auth/formulario/formulario.component';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { RecuperarContrasenaComponent } from './auth/recuperar-contrasena/recuperar-contrasena.component';
 
 
 const routes: Routes = [
@@ -14,8 +15,8 @@ const routes: Routes = [
   { path: 'hacer-pedido', component: HacerPedidoComponent },
   { path: 'ver-pedido', component: VerPedidoComponent },
   { path: 'crear-usuario', component: CrearUsuarioComponent},
-  { path: 'pedido', component: PedidoComponent }
-  
+  { path: 'pedido', component: PedidoComponent },
+  { path: 'recuperar-contrasena', component: RecuperarContrasenaComponent }
 ];
 
 @NgModule({

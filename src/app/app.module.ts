@@ -14,6 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; // Importa FormsModule
 import { ReactiveFormsModule } from '@angular/forms';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { RecuperarContrasenaComponent } from './auth/recuperar-contrasena/recuperar-contrasena.component';
+import { AuthService } from './auth/services/auth.service';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -29,6 +33,7 @@ import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
     HeaderComponent,
     FormularioComponent,
     FooterComponent,
+    RecuperarContrasenaComponent,
     
   ],
   imports: [
@@ -36,11 +41,15 @@ import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    
 
   ],
-  providers: [],
+  providers: [
+    AuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
