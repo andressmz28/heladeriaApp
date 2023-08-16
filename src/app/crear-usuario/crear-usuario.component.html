@@ -8,40 +8,52 @@
 </head>
 <body>
 
-<div class="container-fluid background-image-container d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #f7f7f7;">
-  <div class="form-container">
-    <form class="form">
-      <p class="title">Registro</p>
-      <p class="message" style="font-size: 17px;">Regístrese ahora y obtenga acceso completo a nuestra aplicación.</p>
-
-      <div class="flex">
+  <div class="container-fluid background-image-container d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #f7f7f7;">
+    <div class="form-container">
+      <form [formGroup]="userForm" class="form" (ngSubmit)="registrarUsuario()">
+        <p class="title">Registro</p>
+        <p class="message" style="font-size: 17px;">Regístrese ahora y obtenga acceso completo a nuestra aplicación.</p>
+  
+        <div class="flex">
+          <label>
+            <input type="text" formControlName="nombre" placeholder="Nombre" class="input">
+          </label>
+  
+          <label>
+            <input type="text" formControlName="apellido" placeholder="Apellido" class="input">
+          </label>
+        </div>
+  
         <label>
-          <input required="" placeholder="" type="text" class="input">
-          <span>Nombre</span>
+          <input type="email" formControlName="correo" placeholder="Correo" class="input">
         </label>
-
+  
         <label>
-          <input required="" placeholder="" type="text" class="input">
-          <span>Apellido</span>
+          <input type="password" formControlName="contrasena" placeholder="Contraseña" class="input">
         </label>
-      </div>
-
-      <label>
-        <input required="" placeholder="" type="email" class="input">
-        <span>Correo</span>
-      </label>
-
-      <label>
-        <input required="" placeholder="" type="password" class="input">
-        <span>Contraseña</span>
-      </label>
-      <label>
-        <input required="" placeholder="" type="password" class="input">
-        <span>Confirmar contraseña</span>
-      </label>
-      <button class="submit" routerLink="">Aceptar</button>
-      <p class="signin" style="font-size: 17px;">¿Ya tienes una cuenta? <a href="" >Iniciar Sesion</a></p>
-    </form>
+        <label>
+          <input type="password" formControlName="confirmarContrasena" placeholder="Confirmar contraseña" class="input">
+        </label>
+        <button type="submit" class="submit">Aceptar</button>
+        <p class="signin" style="font-size: 17px;">¿Ya tienes una cuenta? <a href="">Iniciar Sesion</a></p>
+      </form>
+    </div>
   </div>
-</div>
-<app-footer></app-footer>
+  <app-footer></app-footer>
+
+  
+  
+  
+  
+  
+  
+
+<script>
+  // Limpiar los campos al recargar la página
+  document.addEventListener("DOMContentLoaded", function () {
+    const inputs = document.querySelectorAll(".input");
+    inputs.forEach(input => input.value = "");
+  });
+</script>
+</body>
+</html>
