@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerPedidoComponent } from './ver-pedido.component';
+import { AdminSalsasComponent } from './admin-salsas.component';
 
-describe('VerPedidoComponent', () => {
-  let component: VerPedidoComponent;
-  let fixture: ComponentFixture<VerPedidoComponent>;
+describe('AdminSalsasComponent', () => {
+  let component: AdminSalsasComponent;
+  let fixture: ComponentFixture<AdminSalsasComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VerPedidoComponent ]
+      declarations: [ AdminSalsasComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VerPedidoComponent);
+    fixture = TestBed.createComponent(AdminSalsasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,5 +21,3 @@ describe('VerPedidoComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
-

@@ -1,0 +1,110 @@
+body{
+    background: linear-gradient(to bottom right, #e9c8e2, #b8e8c4, #a690ee); /* Colores del degradado */
+    min-height: 100vh; /* Esto asegura que el degradado se extienda al menos hasta el tamaño de la pantalla */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    padding: 0;
+   
+    justify-content: center;
+    align-items: center;
+    animation: fanimado 5s linear infinite;
+  
+  } 
+  
+  
+  .background-image-container {
+    position: relative;
+    background-image: url("../../assets/images/pl.jpg"); 
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  
+  
+  .card-footer {
+    background-color: #f9f9f9;
+    border-top: none;
+  }
+  
+  .card-header{
+    background-color: #78a2e1;
+    border-top: none;
+    font-family: 'Merriweather', serif;
+    text-decoration-color: #393737;
+  
+    
+  }
+  
+  .card-body {
+    background-color: #f2edf5;
+    border-top: none;
+    font-family: 'Edu SA Beginner', cursive;
+    font-family: 'Merriweather', serif;
+    padding: 10px; /* Ajusta el valor del padding según lo que necesites */
+  }
+  
+  
+  
+  /* Estilos para el componente HeladoComponent */
+  
+  /* Aquí definimos el fondo degradado */
+  
+  
+  .container {
+  background-color: #fbf9fa;
+  padding: 50px; /* Ajusta el padding según tus necesidades */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 80%; /* Ancho máximo del contenedor del componente */
+  max-height: 100%;
+  width: 100%; /* Ancho del contenedor (100% del ancho del contenedor padre) */
+  height: 100%; /* Altura del contenedor, ajusta según tus necesidades */
+  }
+  
+  @keyframes fanimado{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+  }
+  
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  
+  
+  .icon-container {
+  
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    width: 100px; /* Ajusta el ancho según tus necesidades */
+    height: 100px; /* Ajusta la altura según tus necesidades */
+    cursor: pointer;
+    
+  }
+  
+  .icon-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-trash:hover {
+    color: red; /* Cambio de color al pasar el cursor sobre el icono de trash */
+  }
+  
+  .icon-check:hover {
+    color: green; /* Cambio de color al pasar el cursor sobre el icono de check */
+  }
+  

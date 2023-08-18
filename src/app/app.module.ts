@@ -14,9 +14,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; // Importa FormsModule
 import { ReactiveFormsModule } from '@angular/forms';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar'; // Importa MatSnackBarModule
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
+import { AdminDulcesComponent } from './admin-dulces/admin-dulces.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminEspecialesComponent } from './admin-especiales/admin-especiales.component';
+import { AdminFrutasComponent } from './admin-frutas/admin-frutas.component';
+import { AdminToppingsComponent } from './admin-toppings/admin-toppings.component';
+import { AdminSalsasComponent } from './admin-salsas/admin-salsas.component';
+import { AdminLicoresComponent } from './admin-licores/admin-licores.component';
 
 
 @NgModule({
@@ -38,13 +45,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    MatSnackBarModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule
 
 
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

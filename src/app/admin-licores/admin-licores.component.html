@@ -1,0 +1,378 @@
+
+<!-- =============== Navigation ================ -->
+<div class="container">
+  <div [ngClass]="status ? 'active' : ''" class="navigation">
+      <ul>
+          <li>
+              <a href="#">
+                  <span class="icon">
+                    <i class="fa fa-home"></i>
+                  </span>
+                  <span class="title">Helados WOW</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/admin">
+                  <span class="icon">
+                    <i class="fa fa-table" aria-hidden="true"></i>
+                  </span>
+                  <span class="title">Dashboard</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/admin/pedidos">
+                  <span class="icon">
+                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                  </span>
+                  <span class="title">Pedidos</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/admin/usuarios">
+                  <span class="icon">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                  </span>
+                  <span class="title">Usuarios</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/admin/helados">
+                  <span class="icon">
+                    <i class="fas fa-utensils" aria-hidden="true"></i>
+                  </span>
+                  <span class="title">Helados</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/admin/dulces">
+                  <span class="icon">
+                    <i class="fas fa-utensils" aria-hidden="true"></i>
+                  </span>
+                  <span class="title">Dulces</span>
+              </a>
+          </li>
+
+          <li>
+              <a href="/admin/especiales">
+                  <span class="icon">
+                    <i class="fas fa-utensils" aria-hidden="true"></i>
+                  </span>
+                  <span class="title">Especiales</span>
+              </a>
+          </li>
+
+          <li>
+            <a href="/admin/frutas">
+                <span class="icon">
+                  <i class="fas fa-utensils" aria-hidden="true"></i>
+                </span>
+                <span class="title">Frutas</span>
+            </a>
+        </li>
+
+        <li>
+          <a href="/admin/toppings">
+              <span class="icon">
+                <i class="fas fa-utensils" aria-hidden="true"></i>
+              </span>
+              <span class="title">Toppings</span>
+          </a>
+      </li>
+
+      <li>
+        <a href="/admin/salsas">
+            <span class="icon">
+              <i class="fas fa-utensils" aria-hidden="true"></i>
+            </span>
+            <span class="title">Salsas</span>
+        </a>
+    </li>
+
+    <li>
+      <a href="/admin/licores">
+          <span class="icon">
+            <i class="fas fa-glass-martini" aria-hidden="true"></i>
+          </span>
+          <span class="title">Licores</span>
+      </a>
+  </li>
+
+          <!-- <li>
+              <a href="/">
+                  <span class="icon">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  </span>
+                  <span class="title">Sign Out</span>
+              </a>
+          </li> -->
+      </ul>
+  </div>
+
+  <!-- ========================= Main ==================== -->
+  <div [ngClass]="status ? 'active' : ''" class="main">
+      <div class="topbar">
+          <div class="toggle" (click)="addToggle()">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </div>
+
+          <div class="user">
+              <img src="assets/images/logo.jpg" alt="">
+          </div>
+
+          <div class="toggle" (click)="logout()">
+            <i class="fas fa-sign-out-alt" color="red" aria-hidden="true"></i>
+          </div>
+      </div>
+
+      <!-- ======================= Cards ==================
+      <div class="cardBox">
+          <div class="card">
+              <div>
+                  <div class="numbers">7</div>
+                  <div class="cardName">Pedidos pendientes</div>
+              </div>
+
+              <div class="iconBx">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+              </div>
+          </div>
+
+          <div class="card">
+              <div>
+                  <div class="numbers">8</div>
+                  <div class="cardName">Usuarios</div>
+              </div>
+
+              <div class="iconBx">
+                <i class="fa fa-users" aria-hidden="true"></i>
+              </div>
+          </div>
+
+          <div class="card">
+              <div>
+                  <div class="numbers">18</div>
+                  <div class="cardName">Helados</div>
+              </div>
+
+              <div class="iconBx">
+                <i class="fas fa-utensils" aria-hidden="true"></i>
+              </div>
+          </div>
+
+          <div class="card">
+              <div>
+                  <div class="numbers">5</div>
+                  <div class="cardName">Dulces</div>
+              </div>
+
+              <div class="iconBx">
+                <i class="fas fa-utensils" aria-hidden="true"></i>
+              </div>
+          </div>
+      </div>
+
+      <div class="cardBox">
+        <div class="card">
+            <div>
+                <div class="numbers">4</div>
+                <div class="cardName">Licores</div>
+            </div>
+
+            <div class="iconBx">
+              <i class="fas fa-glass-martini" aria-hidden="true"></i>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="numbers">9</div>
+                <div class="cardName">Frutas</div>
+            </div>
+
+            <div class="iconBx">
+              <i class="fas fa-utensils" aria-hidden="true"></i>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="numbers">12</div>
+                <div class="cardName">Toppings</div>
+            </div>
+
+            <div class="iconBx">
+              <i class="fas fa-utensils" aria-hidden="true"></i>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="numbers">11</div>
+                <div class="cardName">Salsas</div>
+            </div>
+
+            <div class="iconBx">
+              <i class="fas fa-utensils" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div> -->
+
+      <!-- ================ Order Details List ================= -->
+
+      <div class="details">
+          <div class="recentOrders ">
+              <div class="cardHeader">
+                  <h2>Licores</h2>
+                  <button class="btn btn-light" style="float: right;" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addmodel()">Agregar</button>
+
+              </div>
+
+              <table>
+                <tr>
+                    <!-- <th>Id</th> -->
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Gramos</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let tableData of dulces; let i = index;">
+                    <!-- <td>{{i+1}}</td> -->
+                    <td>{{tableData.id}}</td>
+                    <td>{{tableData.nombre}}</td>
+                    <td>{{tableData.precio}}</td>
+                    <td>{{tableData.gramos}}</td>
+                    <td>
+                        <button class="btn btn-primary" data-bs-toggle="modal" (click)="edit(i, tableData)" data-bs-target="#exampleModal"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger" style="margin-left: 20px;" (click)="delete(i, tableData)"><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+            </table>
+          </div>
+
+          <!-- ================= New Customers ================ -->
+          <!-- <div class="recentCustomers">
+              <div class="cardHeader">
+                  <h2>Recent Customers</h2>
+              </div>
+
+              <table>
+                  <tr>
+                      <td width="60px">
+                          <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
+                      </td>
+                      <td>
+                          <h4>David <br> <span>Italy</span></h4>
+                      </td>
+                  </tr>
+
+                  <tr>
+                      <td width="60px">
+                          <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
+                      </td>
+                      <td>
+                          <h4>Jassa <br> <span>India</span></h4>
+                      </td>
+                  </tr>
+
+                  <tr>
+                      <td width="60px">
+                          <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
+                      </td>
+                      <td>
+                          <h4>David <br> <span>Italy</span></h4>
+                      </td>
+                  </tr>
+
+                  <tr>
+                      <td width="60px">
+                          <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
+                      </td>
+                      <td>
+                          <h4>Jassa <br> <span>India</span></h4>
+                      </td>
+                  </tr>
+
+                  <tr>
+                      <td width="60px">
+                          <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
+                      </td>
+                      <td>
+                          <h4>David <br> <span>Italy</span></h4>
+                      </td>
+                  </tr>
+
+                  <tr>
+                      <td width="60px">
+                          <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
+                      </td>
+                      <td>
+                          <h4>Jassa <br> <span>India</span></h4>
+                      </td>
+                  </tr>
+
+                  <tr>
+                      <td width="60px">
+                          <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
+                      </td>
+                      <td>
+                          <h4>David <br> <span>Italy</span></h4>
+                      </td>
+                  </tr>
+
+                  <tr>
+                      <td width="60px">
+                          <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
+                      </td>
+                      <td>
+                          <h4>Jassa <br> <span>India</span></h4>
+                      </td>
+                  </tr>
+              </table>
+          </div> -->
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{isedit ? 'Editar' : 'Agregar'}}</h5>
+                        <span data-bs-dismiss="modal" aria-label="class" class="close-btn1">x</span>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-box">
+                            <form [formGroup]="formulario" (ngSubmit)="isedit ? update(formulario) : sendata(formulario)">
+
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="text" placeholder="Nombre" formControlName="nombre" class="form-control mt-3 mb-3"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Precio</label>
+                                    <input type="text" placeholder="Precio" formControlName="precio" class="form-control mt-3 mb-3"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Gramos</label>
+                                    <input type="text" placeholder="Gramos" formControlName="gramos" class="form-control mt-3 mb-3"/>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">{{isedit ? 'Actualizar' : 'Subir'}}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+      </div>
+  </div>
+</div>
+

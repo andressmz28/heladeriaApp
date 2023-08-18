@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="">
+ 
+</head>
+<body>
+
+<div class="container-fluid background-image-container d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #f7f7f7;">
+<div class="wrapper bg-white">
+    <div class="h2 text-center">Helados WOW</div>
+    <div class="h4 text-muted text-center pt-2">Recuperar contraseña</div>
+  <br>
+        <img src="assets/images/lex.jpg" style=" max-width: 90px; max-height: 90px;  display: block; margin: 0 auto">
+        <form [formGroup]="recuperarContrasenaForm" class="pt-3">
+            <div class="form-group py-2">
+                <div class="input-field">  <input formControlName="email" type="text" placeholder="Correo" required class=""> </div>
+            </div>
+            <div *ngIf="email && (email.invalid && (email.dirty || email.touched))" class="text-danger">
+                <div *ngIf="email.errors?.['required']">
+                    El email es requerido.
+                </div>
+                <div *ngIf="email.errors?.['email']">
+                    El email debe tener un formato válido.
+                </div>
+            </div>
+            
+            <div class="text-center pt-3 text-muted">¿Recuperaste tu contraseña? <a href="#">Iniciar sesión</a></div>
+            <button (click)="recuperarContrasena()" class="btn btn-block text-center my-3">Recuperar contraseña</button>
+        </form>
+        
+</div>
+
+<app-footer></app-footer>
