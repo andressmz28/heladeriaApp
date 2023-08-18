@@ -14,8 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; // Importa FormsModule
 import { ReactiveFormsModule } from '@angular/forms';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
-
-
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { RecuperarContrasenaComponent } from "./auth/recuperar-contrasena/recuperar-contrasena.component";
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { AdminDulcesComponent } from './admin-dulces/admin-dulces.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
@@ -38,6 +40,15 @@ import { AdminLicoresComponent } from './admin-licores/admin-licores.component';
     HeaderComponent,
     FormularioComponent,
     FooterComponent,
+    AdminDulcesComponent,
+    IniciarSesionComponent,
+    AdminHomeComponent,
+    AdminEspecialesComponent,
+    AdminFrutasComponent,
+    AdminToppingsComponent,
+    AdminSalsasComponent,
+    AdminLicoresComponent,
+    RecuperarContrasenaComponent
 
   ],
   imports: [
@@ -45,10 +56,12 @@ import { AdminLicoresComponent } from './admin-licores/admin-licores.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-
-
+    ReactiveFormsModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(), // ToastrModule added
   ],
+  providers: [ToastrService], // Agrega ToastrService como proveedor
   bootstrap: [AppComponent]
 })
 export class AppModule { }

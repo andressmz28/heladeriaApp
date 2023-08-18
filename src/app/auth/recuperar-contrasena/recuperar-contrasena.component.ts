@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
-import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr'; // O la ruta correcta al módulo ToastrService
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
