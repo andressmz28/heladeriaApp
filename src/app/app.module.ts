@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; // Importa FormsModule
 import { ReactiveFormsModule } from '@angular/forms';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar'; // Importa MatSnackBarModule
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -29,14 +31,16 @@ import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
     HeaderComponent,
     FormularioComponent,
     FooterComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
 
 
   ],

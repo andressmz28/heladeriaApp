@@ -1,102 +1,118 @@
-<div class="container text-center pt-5">
-  <div class="row" style="height: 100px;">
-    <div class="col">
-      <h2>Hacer pedido</h2>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="">
+
+</head>
+
+<body>
+
+  <div class="container-fluid background-image-container d-flex justify-content-center custom-container"
+    style="height: 100vh; background-color: #f7f7f7;">
+    <div class="container text-center pt-5">
+
+      <div class="row" style="height: 100px;">
+        <div class="col">
+          <div class="h2">Hacer pedido</div>
+        </div>
+      </div>
+
+      <!-- Opciones para el helado -->
+
+      <div class="row" style="padding: 30px; background-color: #f19fa4; ">
+        <div class="col-6">
+          <h4>Helado:</h4>
+
+          <select class="form-select" [(ngModel)]="selectedHelado">
+            <option disabled selected [ngValue]="null">Selecciona un helado</option>
+            <option *ngFor="let helado of helados" [value]="helado.id">{{ helado.nombre }}</option>
+          </select>
+
+        </div>
+        <div class="col-6">
+          <h4>Endulsante:</h4>
+          <select class="form-select" [(ngModel)]="selectedEndulsante">
+            <option disabled selected [ngValue]="null">Selecciona una opcion</option>
+            <option value="1">Si</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+
+      </div>
+
+
+
+      <!-- Selección de sabor del helado -->
+      <div class="row" style="padding: 30px; background-color: #f19fa4; ">
+        <div class="col-4">
+          <h4>Salsa:</h4>
+
+          <select class="form-select" [(ngModel)]="selectedSalsa">
+            <option disabled selected [ngValue]="null">Selecciona la salsa</option>
+            <option *ngFor="let salsa of salsas" [value]="salsa.id">{{ salsa.nombre }}</option>
+          </select>
+
+        </div>
+        <div class="col-4">
+          <h4>Topping:</h4>
+          <select class="form-select" [(ngModel)]="selectedTopings">
+            <option disabled selected [ngValue]="null">Selecciona el topping</option>
+            <option *ngFor="let toping of topings" [value]="toping.id">{{ toping.nombre }}</option>
+          </select>
+        </div>
+
+
+        <div class="col-4">
+          <h4>Fruta:</h4>
+
+          <select class="form-select" [(ngModel)]="selectedFruta">
+            <option disabled selected [ngValue]="null">Selecciona la fruta</option>
+            <option *ngFor="let fruta of frutas" [value]="fruta.id">{{ fruta.nombre }}</option>
+          </select>
+
+        </div>
+      </div>
+      <div class="row" style="padding: 30px; background-color: #f19fa4; ">
+        <div class="col-4">
+          <h4>Dulce:</h4>
+
+          <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedDulce">
+            <option disabled selected [ngValue]="null">Selecciona el dulce</option>
+            <option *ngFor="let dulce of dulces" [value]="dulce.id">{{ dulce.nombre }}</option>
+          </select>
+        </div>
+
+        <div class="col-4">
+          <h4>Especial:</h4>
+          <select class="form-select" [(ngModel)]="selectedEspecial">
+            <option disabled selected [ngValue]="null">Selecciona el especial</option>
+            <option *ngFor="let especial of especiales" [value]="especial.id">{{ especial.nombre }}</option>
+          </select>
+
+        </div>
+        <div class="col-4">
+          <h4>Licor:</h4>
+
+          <select class="form-select" [(ngModel)]="selectedLicor">
+            <option disabled selected [ngValue]="null">Selecciona el licor</option>
+            <option *ngFor="let licor of licores" [value]="licor.id">{{ licor.nombre }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row" style="height: 150px; padding: 15px 150px 0px 150px; background-color: #f19fa4; ">
+
+        <div class="col">
+          <!-- Botón para confirmar el pedido -->
+          <button class="btn btn-block" (click)="realizarPedido()">Confirmar Pedido</button>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
-  <!-- Opciones para el helado -->
-
-  <div class="row"style="padding-bottom: 80px;">
-    <div class="col-6">
-      <h4>Helado:</h4>
-
-      <select class="form-select" >
-        <option disabled selected [ngValue]="null">Selecciona un helado</option>
-        <option *ngFor="let helado of helados" [value]="helado.id">{{ helado.nombre }}</option>
-      </select>
-
-    </div>
-    <div class="col-6">
-      <h4>Endulsante:</h4>
-      <select class="form-select">
-        <option disabled selected [ngValue]="null">Selecciona una opcion</option>
-        <option value="1">Si</option>
-        <option value="0">No</option>
-      </select>
-    </div>
-
-  </div>
-
-
-
-  <!-- Selección de sabor del helado -->
-  <div class="row"style="padding-bottom: 80px;">
-    <div class="col-4">
-      <h4>Salsa:</h4>
-
-      <select class="form-select" >
-        <option disabled selected [ngValue]="null">Selecciona la salsa</option>
-        <option *ngFor="let salsa of salsas" [value]="salsa.id">{{ salsa.nombre }}</option>
-      </select>
-
-    </div>
-    <div class="col-4">
-      <h4>Topping:</h4>
-      <select class="form-select" >
-        <option disabled selected [ngValue]="null">Selecciona el topping</option>
-        <option *ngFor="let toping of topings" [value]="toping.id">{{ toping.nombre }}</option>
-      </select>
-    </div>
-
-
-    <div class="col-4">
-      <h4>Fruta:</h4>
-
-      <select class="form-select" >
-        <option disabled selected [ngValue]="null">Selecciona la fruta</option>
-        <option *ngFor="let fruta of frutas" [value]="fruta.id">{{ fruta.nombre }}</option>
-      </select>
-
-    </div>
-  </div>
-  <div class="row"style="padding-bottom: 80px;">
-    <div class="col-4">
-      <h4>Dulce:</h4>
-
-      <select class="form-select" aria-label="Default select example" >
-        <option disabled selected [ngValue]="null">Selecciona el dulce</option>
-        <option *ngFor="let dulce of dulces" [value]="dulce.id">{{ dulce.nombre }}</option>
-      </select>
-    </div>
-
-    <div class="col-4">
-      <h4>Especial:</h4>
-    <select class="form-select" >
-      <option disabled selected [ngValue]="null">Selecciona el especial</option>
-      <option *ngFor="let especial of especiales" [value]="especial.id">{{ especial.nombre }}</option>
-    </select>
-
-    </div>
-    <div class="col-4">
-      <h4>Licor:</h4>
-
-      <select class="form-select" >
-        <option disabled selected [ngValue]="null">Selecciona el licor</option>
-        <option *ngFor="let licor of licores" [value]="licor.id">{{ licor.nombre }}</option>
-      </select>
-    </div>
-  </div>
-  <div class="row" style="height: 150px;">
-    <div class="col">
-      <!-- Botón para agregar más toppings -->
-      <button class="btn btn-success">Agregar Topping</button>
-    </div>
-    <div class="col">
-      <!-- Botón para confirmar el pedido -->
-      <button class="btn btn-primary" (click)="realizarPedido()">Confirmar Pedido</button>
-    </div>
-  </div>
-
-
-</div>
+</body>
+<app-footer></app-footer>
