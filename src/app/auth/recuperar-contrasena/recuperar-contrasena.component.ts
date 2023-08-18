@@ -32,7 +32,7 @@ export class RecuperarContrasenaComponent {
       this.toastr.error('Por favor, ingrese un correo válido.', 'Error');
       return; // No realizar la solicitud si el formulario no es válido
     }
-  
+
     const email = this.email?.value;
     this.authService.solicitarRecuperacionContrasena(email).subscribe(
       response => {

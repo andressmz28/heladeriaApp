@@ -20,6 +20,15 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
+import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
+import { AdminDulcesComponent } from './admin-dulces/admin-dulces.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminEspecialesComponent } from './admin-especiales/admin-especiales.component';
+import { AdminFrutasComponent } from './admin-frutas/admin-frutas.component';
+import { AdminToppingsComponent } from './admin-toppings/admin-toppings.component';
+import { AdminSalsasComponent } from './admin-salsas/admin-salsas.component';
+import { AdminLicoresComponent } from './admin-licores/admin-licores.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +43,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormularioComponent,
     FooterComponent,
     RecuperarContrasenaComponent,
-    
+
+
+
+    HomeComponent,
+
+    HacerPedidoComponent,
+    VerPedidoComponent,
+
+    IniciarSesionComponent,
+    AdminDulcesComponent,
+    AdminHomeComponent,
+    AdminEspecialesComponent,
+    AdminFrutasComponent,
+    AdminToppingsComponent,
+    AdminSalsasComponent,
+    AdminLicoresComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +68,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    
 
+
+    ReactiveFormsModule
   ],
   providers: [
     AuthService,
