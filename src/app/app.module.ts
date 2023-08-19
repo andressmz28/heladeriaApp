@@ -16,7 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 import { RecuperarContrasenaComponent } from "./auth/recuperar-contrasena/recuperar-contrasena.component";
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { AdminDulcesComponent } from './admin-dulces/admin-dulces.component';
@@ -61,7 +61,7 @@ import { AdminLicoresComponent } from './admin-licores/admin-licores.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(), // ToastrModule added
   ],
-  providers: [ToastrService], // Agrega ToastrService como proveedor
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
