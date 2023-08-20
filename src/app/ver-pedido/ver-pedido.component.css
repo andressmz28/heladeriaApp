@@ -3,16 +3,16 @@ body{
     min-height: 100vh; /* Esto asegura que el degradado se extienda al menos hasta el tamaño de la pantalla */
     margin: 0; /* Elimina el margen predeterminado del body */
     padding: 0;
-   
+
     justify-content: center;
     align-items: center;
     animation: fanimado 5s linear infinite;
 
-} 
+}
 
 .background-image-container {
   position: relative;
-  background-image: url("../../assets/images/pl.jpg"); 
+  background-image: url("../../assets/images/pl.jpg");
   background-size: cover ;
   background-repeat: no-repeat;
   background-position: center;
@@ -24,34 +24,34 @@ body{
 .card-body {
     padding: 10px;
   }
-  
+
   .card-footer {
     background-color: #f9f9f9;
     border-top: none;
   }
-  
+
   .card-header{
     background-color: #d0a2e5;
     border-top: none;
     font-family: 'Merriweather', serif;
     text-decoration-color: #333;
     padding: 20px;
-    
+
   }
 
-  
+
   .card-body{
     background-color: #f2edf5;
     border-top: none;
     font-family: 'Edu SA Beginner', cursive;
     font-family: 'Merriweather', serif;
-    
+
     .card-body .row {
       margin-bottom: 20px;
     }
   }
 
-  
+
   /* Estilos para el componente HeladoComponent */
 
 /* Aquí definimos el fondo degradado */
@@ -66,7 +66,7 @@ body{
   width: 100%; /* Ancho del contenedor (100% del ancho del contenedor padre) */
   height: 100%; /* Altura del contenedor, ajusta según tus necesidades */
 }
-  
+
   @keyframes fanimado{
     0%{
         background-position: 0% 50%;
@@ -105,7 +105,7 @@ body{
     color: rgb(199, 221, 227);
     font-size: 15px;
 
-    
+
   }
 
   .footer-button {
@@ -119,7 +119,7 @@ body{
     transition: background-color 0.3s;
     font-weight: bold;
     margin-bottom: 5px; /* Añadido margen inferior */
-    
+
   }
 
   .footer-button:hover {
@@ -141,3 +141,45 @@ body{
     font-family: 'Edu SA Beginner', cursive;
     font-family: 'Merriweather', serif;
   }
+
+  .form-box{
+    padding: 25px;
+    background-color: #bcbcbc3d;
+    margin: 0px auto;
+}
+h4{
+    text-align: center;
+}
+.modal-body{
+    margin: -18px;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+th, td{
+    text-align: center;
+    padding: 8px;
+}
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+th{
+    background-color: #d0a2e5;
+    color: white;
+}
+.modal-header{
+    background-color: #d0a2e5;
+    color: white;
+}
+.close-btn1{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: white;
+    padding: 6px 12px;
+    font-weight: bold;
+    border-radius: 23px;
+    color:#9ed7c6;
+    cursor: pointer;
+}
+

@@ -4,11 +4,12 @@ import { ApiService } from '../services/api.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-admin-licores',
-  templateUrl: './admin-licores.component.html',
-  styleUrls: ['./admin-licores.component.css']
+  selector: 'app-admin-pedidos',
+  templateUrl: './admin-pedidos.component.html',
+  styleUrls: ['./admin-pedidos.component.css']
 })
-export class AdminLicoresComponent {
+export class AdminPedidosComponent {
+
 
   formulario:FormGroup|any;
   isedit:boolean=false;
@@ -16,6 +17,15 @@ export class AdminLicoresComponent {
   tableDatanameShow:any;
   dulces: any[] = [];
   data: any[] = [];
+  userId: number = 1; // Cambia esto según el ID de usuario deseado
+  pedidosConSumaIngredientes: any[] = [];
+  nombresDulces: any[] = [];
+  nombresFrutas: any[] = [];
+  nombresEspeciales: any[] = [];
+  nombresLicores: any[] = [];
+  nombresSalsas: any[] = [];
+  nombresTopings: any[] = [];
+  pedidoId: number=0
 
   username:any;
   usernameShow:any;
@@ -28,7 +38,15 @@ export class AdminLicoresComponent {
      'gramos':new FormControl(),
     })
     this.getdata();
+    this.pedidosUsuariosAdmin();
    }
+
+   pedidosUsuariosAdmin() {
+    this.apiService.pedidosUsuariosAdmin()
+    .subscribe((data: any[]) => {
+      this.dulces = data;
+    });
+  }
 
    update(tableData: any): void {
      const id = tableData.id;
@@ -84,26 +102,57 @@ export class AdminLicoresComponent {
      this.isedit=true;
      this.formulario.id= tableData.id;
      this.formulario.setValue({
-       nombre:tableData.nombre,
-       precio:tableData.precio,
-       gramos:tableData.gramos,
+       nombre:tableData.nombre_usuario,
+       precio:tableData.nombre_helado,
+       gramos:tableData.suma_total_ingredientes,
      })
-     console.log( this.formulario.id)
+     this.pedidoId = this.formulario.id;
+
+     this.apiService.obtenerNombresDulcesPorPedido(this.pedidoId)
+      .subscribe((data: any[]) => {
+        this.nombresDulces = data;
+      });
+
+      this.apiService.obtenerNombresFrutasPorPedido(this.pedidoId)
+      .subscribe((data: any[]) => {
+        this.nombresFrutas = data;
+      });
+
+      this.apiService.obtenerNombresEspecialesPorPedido(this.pedidoId)
+      .subscribe((data: any[]) => {
+        this.nombresEspeciales = data;
+      });
+
+      this.apiService.obtenerNombresLicoresPorPedido(this.pedidoId)
+      .subscribe((data: any[]) => {
+        this.nombresLicores = data;
+      });
+
+      this.apiService.obtenerNombresSalsasPorPedido(this.pedidoId)
+      .subscribe((data: any[]) => {
+        this.nombresSalsas = data;
+      });
+
+      this.apiService.obtenerNombresTopingsPorPedido(this.pedidoId)
+      .subscribe((data: any[]) => {
+        this.nombresTopings = data;
+      });
    }
 
    delete(index:number, tableData:any){
      this.formulario.id= tableData.id;
      console.log( this.formulario.id)
      this.dulces.splice(index, 1);
-     this.apiService.borrarLicor(this.formulario.id).subscribe(
-       response => {
-         console.log(response.message); // Mensaje de éxito
-         // Puedes actualizar la lista de dulces si es necesario
-       },
-       error => {
-         console.error(error.error); // Mensaje de error
-       }
-       );
+     this.apiService.marcarComoAtendido( this.formulario.id)
+      .subscribe(
+        () => {
+          console.log('Pedido marcado como atendido con éxito');
+          // Puedes realizar otras acciones después de marcar como atendido, como actualizar la vista.
+        },
+        (error) => {
+          console.error('Error al marcar como atendido:', error);
+        }
+      );
    }
 
   //Sidebar toggle show hide function
@@ -116,6 +165,5 @@ logout()
 {
   this.router.navigateByUrl('/');
 }
-
 
 }

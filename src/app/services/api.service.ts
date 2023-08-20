@@ -14,6 +14,7 @@ export class ApiService {
   getHelados(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/helados`);
   }
+
   getDulces(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/dulces`);
   }
@@ -220,4 +221,75 @@ export class ApiService {
     return this.http.get<number>(`${this.apiUrl}/api/pedidos/cantidadNoAtendido`);
   }
 
+  pedidosUsuarioCliente(userId: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/pedidos/pedidosUsuario/${userId}`);
+  }
+
+  pedidosUsuariosAdmin(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/pedidos/pedidosUsuariosAdmin`);
+  }
+
+  obtenerNombresDulcesPorPedido(pedidoId: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/dulcesPedido/obtenerNombresDulcesPorPedido/${pedidoId}`);
+  }
+
+  obtenerNombresFrutasPorPedido(pedidoId: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/frutasPedido/nombres/${pedidoId}`);
+  }
+
+  obtenerNombresEspecialesPorPedido(pedidoId: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/especialesPedido/nombres/${pedidoId}`);
+  }
+
+  obtenerNombresLicoresPorPedido(pedidoId: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/licoresPedido/nombres/${pedidoId}`);
+  }
+
+  obtenerNombresSalsasPorPedido(pedidoId: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/salsasPedido/nombres/${pedidoId}`);
+  }
+
+  obtenerNombresTopingsPorPedido(pedidoId: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/api/topingsPedido/nombres/${pedidoId}`);
+  }
+
+  marcarComoAtendido(pedidoId: number): Observable<any> {
+    return this.http.put(`${this.apiUrl}/api/pedidos/${pedidoId}/marcar-atendido`, {});
+  }
+
+  getUsuarios(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/api/usuarios`);
+  }
+
+  borrarUsuario(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/api/usuarios/${id}`);
+  }
+
+  registerUsuario(form: any){
+    console.log(form)
+    return this.http.post<any[]>(`${this.apiUrl}/api/usuarios/create`,
+      form,
+    );
+  }
+
+  actualizarUsuario(id: number, formData: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/api/usuarios/update/${id}`, formData);
+  }
+
+
+  borrarHelado(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/api/helados/${id}`);
+  }
+
+  actualizarHelado(id: number, formData: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/api/helados/update/${id}`, formData);
+  }
+
+  registerHelado(form: any){
+    console.log(form)
+    return this.http.post<any[]>(`${this.apiUrl}/api/helados/create`,
+      form,
+    );
+  }
+  
 }

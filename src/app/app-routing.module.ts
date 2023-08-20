@@ -16,6 +16,9 @@ import { AdminFrutasComponent } from './admin-frutas/admin-frutas.component';
 import { AdminToppingsComponent } from './admin-toppings/admin-toppings.component';
 import { AdminSalsasComponent } from './admin-salsas/admin-salsas.component';
 import { AdminLicoresComponent } from './admin-licores/admin-licores.component';
+import { AdminPedidosComponent } from './admin-pedidos/admin-pedidos.component';
+import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
+import { AdminHeladosComponent } from './admin-helados/admin-helados.component';
 
 const routes: Routes = [
   { path: '', component: FormularioComponent },
@@ -34,6 +37,9 @@ const routes: Routes = [
   { path: 'admin/toppings', component: AdminToppingsComponent },
   { path: 'admin/salsas', component: AdminSalsasComponent },
   { path: 'admin/licores', component: AdminLicoresComponent },
+  { path: 'admin/pedidos', component: AdminPedidosComponent },
+  { path: 'admin/usuarios', component: AdminUsuariosComponent },
+  { path: 'admin/helados', component: AdminHeladosComponent },
 
 ];
 

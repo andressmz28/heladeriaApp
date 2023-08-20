@@ -11,20 +11,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
-  
+
     <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Luckiest+Guy&family=Marck+Script&family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- 
+
 
   </head>
     <!--
-        //////////////////////////////////////////////// Navegador 
+        //////////////////////////////////////////////// Navegador
     -->
 
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="z-index: 1;">
         <div class="container-fluid">
-          
+
           <a class="navbar-brand" href="#">WOW Gelatto</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@
             </form>
           </div>
         </div>
-        
+
       </nav>
 
     <!--
@@ -60,22 +60,52 @@
     -->
 <body class="vh-100">
   <div class="container-fluid background-image-container d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #f7f7f7;">
-  
-  
+
+
   <div class="container mt-20 mt-md-5" style="position: relative; z-index: 0;">
-    
+
     <div class="card" style="padding-bottom: 10px;">
       <br>
-      
+
       <div class="card-header col d-flex align-items-center justify-content-center fs-5  " >
         MIS PEDIDOS
       </div>
     </div>
-    
+
     <div class="card">
-  
+
       <div class="card-body" >
-        <div class="row">
+
+        <div class="details">
+          <div class="recentOrders ">
+              <div class="cardHeader">
+                  <h2>Pedidos pendientes</h2>
+                  <!-- <button class="btn btn-light" style="float: right;" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addmodel()">Agregar</button> -->
+
+              </div>
+
+              <table>
+                <tr>
+                    <!-- <th>Id</th> -->
+                    <th>Id</th>
+                    <th>Helado</th>
+                    <th>Ingedientes</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let tableData of dulces; let i = index;">
+                    <!-- <td>{{i+1}}</td> -->
+                    <td>{{tableData.id}}</td>
+                    <td>{{tableData.nombre_helado}}</td>
+                    <td>{{tableData.suma_total_ingredientes}}</td>
+                    <td>
+                        <button class="btn btn-primary" data-bs-toggle="modal" (click)="edit(i, tableData)" data-bs-target="#exampleModal">Ingregientes <i class="fas fa-utensils"></i></button>
+                        <!-- <button class="btn btn-danger" style="margin-left: 20px;" (click)="delete(i, tableData)">Atendido <i class="fa fa-check"></i></button> -->
+                    </td>
+                </tr>
+            </table>
+          </div>
+        </div>
+        <!-- <div class="row">
           <div class="col">
             <p><strong>Sabor del helado:</strong> </p>
             <blockquote>
@@ -89,26 +119,79 @@
               <p class="text-muted">Salsa de aderezo: {{ salsaAderezo }}</p>
             </blockquote>
           </div>
-          <div class="col d-flex align-items-center justify-content-center"> <!-- Agregamos "d-flex", "align-items-center" y "justify-content-center" aquí -->
+          <div class="col d-flex align-items-center justify-content-center">  Agregamos "d-flex", "align-items-center" y "justify-content-center" aquí
             <p><strong>Total:</strong> ${{ totalProducto }}</p>
-            <!-- Agrega el icono con el signo menos aquí 
+            Agrega el icono con el signo menos aquí
                <i class="fas fa-times fa-sm" style="color: #ff0909;"></i>
-          -->
+
             </div>
-          
-        </div>
+
+        </div> -->
       </div>
     </div>
-    <div class="card-footer text-end">
-      
+    <!-- <div class="card-footer text-end">
+
       <button type="button" class="btn btn-outline-success" (click)="modificar()"> Modificar</button>
       <button type="button" class="btn btn-outline-danger" (click)="eliminar()">Eliminar</button>
 
-      
-    </div>
+
+    </div> -->
   </div>
 </div>
-  <footer class="footer">
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ingredientes</h5>
+              <span data-bs-dismiss="modal" aria-label="class" class="close-btn1">x</span>
+          </div>
+
+          <div class="modal-body">
+              <div class="form-box">
+                <br>
+                <h5 class="modal-title" id="exampleModalLabel">Dulces</h5>
+                <div *ngFor="let dulce of nombresDulces; let i = index;">
+                  <p>{{i+1}}. {{ dulce.nombre }}</p>
+                </div>
+                <br>
+
+                <h5 class="modal-title" id="exampleModalLabel">Frutas</h5>
+                <div *ngFor="let dulce of nombresFrutas; let i = index;">
+                  <p>{{i+1}}. {{ dulce.nombre }}</p>
+                </div>
+                <br>
+
+                <h5 class="modal-title" id="exampleModalLabel">Especiales</h5>
+                <div *ngFor="let dulce of nombresEspeciales; let i = index;">
+                  <p>{{i+1}}. {{ dulce.nombre }}</p>
+                </div>
+                <br>
+
+                <h5 class="modal-title" id="exampleModalLabel">Licores</h5>
+                <div *ngFor="let dulce of nombresLicores; let i = index;">
+                  <p>{{i+1}}. {{ dulce.nombre }}</p>
+                </div>
+                <br>
+
+                <h5 class="modal-title" id="exampleModalLabel">Salsas</h5>
+                <div *ngFor="let dulce of nombresSalsas; let i = index;">
+                  <p>{{i+1}}. {{ dulce.nombre }}</p>
+                </div>
+                <br>
+
+                <h5 class="modal-title" id="exampleModalLabel">Toppings</h5>
+                <div *ngFor="let dulce of nombresTopings; let i = index;">
+                  <p>{{i+1}}. {{ dulce.nombre }}</p>
+                </div>
+                <br>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+  <!-- <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div>
@@ -118,6 +201,7 @@
         <button type="button" class="footer-button">Realizar pedido</button>
       </div>
     </div>
-  </footer>
+  </footer> -->
+
 </body>
 </html>

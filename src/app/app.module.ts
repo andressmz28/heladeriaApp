@@ -26,6 +26,10 @@ import { AdminFrutasComponent } from './admin-frutas/admin-frutas.component';
 import { AdminToppingsComponent } from './admin-toppings/admin-toppings.component';
 import { AdminSalsasComponent } from './admin-salsas/admin-salsas.component';
 import { AdminLicoresComponent } from './admin-licores/admin-licores.component';
+import { AdminPedidosComponent } from './admin-pedidos/admin-pedidos.component';
+import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
+import { AdminHeladosComponent } from './admin-helados/admin-helados.component';
+
 
 
 @NgModule({
@@ -48,8 +52,11 @@ import { AdminLicoresComponent } from './admin-licores/admin-licores.component';
     AdminToppingsComponent,
     AdminSalsasComponent,
     AdminLicoresComponent,
-    RecuperarContrasenaComponent
+    RecuperarContrasenaComponent,
 
+    AdminPedidosComponent,
+    AdminUsuariosComponent,
+    AdminHeladosComponent
   ],
   imports: [
     BrowserModule,

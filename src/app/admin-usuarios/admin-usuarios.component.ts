@@ -4,11 +4,11 @@ import { ApiService } from '../services/api.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-admin-licores',
-  templateUrl: './admin-licores.component.html',
-  styleUrls: ['./admin-licores.component.css']
+  selector: 'app-admin-usuarios',
+  templateUrl: './admin-usuarios.component.html',
+  styleUrls: ['./admin-usuarios.component.css']
 })
-export class AdminLicoresComponent {
+export class AdminUsuariosComponent {
 
   formulario:FormGroup|any;
   isedit:boolean=false;
@@ -16,16 +16,18 @@ export class AdminLicoresComponent {
   tableDatanameShow:any;
   dulces: any[] = [];
   data: any[] = [];
-
   username:any;
   usernameShow:any;
+  cantidadDulces: number=0;
+
   constructor( private router: Router, private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.formulario = new FormGroup({
      'nombre':new FormControl(),
-     'precio':new FormControl(),
-     'gramos':new FormControl(),
+     'correo':new FormControl(),
+     'contrasena':new FormControl(),
+     'permiso_id':new FormControl(),
     })
     this.getdata();
    }
@@ -34,19 +36,19 @@ export class AdminLicoresComponent {
      const id = tableData.id;
      const formData = this.formulario.value; // Obtiene los valores del formulario
 
-     this.apiService.actualizarLicor(id, formData).subscribe(
+     this.apiService.actualizarUsuario(id, formData).subscribe(
        response => {
          console.log(response); // Datos actualizados
          // Puedes manejar la lógica de actualización en tu componente
          // this.showInfo();
-         this.getdata();
+          this.getdata();
        },
        error => {
          console.error(error); // Mensaje de error
        }
      );
      this.dulces=[];
-     this.apiService.getLicores().subscribe((data: any[]) => {
+     this.apiService.getUsuarios().subscribe((data: any[]) => {
        this.dulces = data;
      });
      console.log("fin del update")
@@ -61,13 +63,13 @@ export class AdminLicoresComponent {
      //   this.showSuccess(); notificacion
      //   this.getdata();
      // })
-     this.apiService.registerLicor(formulario.value).subscribe((data: any) => {
+     this.apiService.registerUsuario(formulario.value).subscribe((data: any) => {
        console.log(data)
      })
    }
 
    getdata(){
-     this.apiService.getLicores().subscribe((data: any[]) => {
+     this.apiService.getUsuarios().subscribe((data: any[]) => {
        this.dulces = data;
      });
      // this._dataservice.getdata().subscribe(res=>{
@@ -85,8 +87,9 @@ export class AdminLicoresComponent {
      this.formulario.id= tableData.id;
      this.formulario.setValue({
        nombre:tableData.nombre,
-       precio:tableData.precio,
-       gramos:tableData.gramos,
+       correo:tableData.correo,
+       contrasena:tableData.contrasena,
+       permiso_id:tableData.permiso_id,
      })
      console.log( this.formulario.id)
    }
@@ -95,7 +98,7 @@ export class AdminLicoresComponent {
      this.formulario.id= tableData.id;
      console.log( this.formulario.id)
      this.dulces.splice(index, 1);
-     this.apiService.borrarLicor(this.formulario.id).subscribe(
+     this.apiService.borrarUsuario(this.formulario.id).subscribe(
        response => {
          console.log(response.message); // Mensaje de éxito
          // Puedes actualizar la lista de dulces si es necesario
@@ -117,5 +120,5 @@ logout()
   this.router.navigateByUrl('/');
 }
 
-
 }
+
