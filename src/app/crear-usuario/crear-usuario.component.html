@@ -34,8 +34,13 @@
         </label>
         <label>
           <input type="password" formControlName="confirmarContrasena" placeholder="Confirmar contraseña" class="input">
+          <div *ngIf="userForm.hasError('contrasenaMismatch', 'confirmarContrasena')" class="error-message">
+            Las contraseñas no coinciden.
+          </div>
         </label>
-        <button type="submit" class="submit">Aceptar</button>
+        
+        <button type="submit" class="submit" >Aceptar</button>
+       
         <p class="signin" style="font-size: 17px;">¿Ya tienes una cuenta? <a href="">Iniciar Sesion</a></p>
       </form>
     </div>

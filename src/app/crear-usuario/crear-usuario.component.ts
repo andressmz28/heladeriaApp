@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators , AbstractControl} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-crear-usuario',
@@ -20,7 +21,21 @@ export class CrearUsuarioComponent implements OnInit {
       correo: ['', [Validators.required, Validators.email]],
       contrasena: ['', Validators.required],
       confirmarContrasena: ['', Validators.required]
-    });
+    } ,{ validator: this.confirmarContrasenaValidator });
+    
+  }
+
+  confirmarContrasenaValidator(group: FormGroup): { [key: string]: any } | null {
+    const contrasena = group.get('contrasena')?.value;
+    const confirmarContrasena = group.get('confirmarContrasena')?.value;
+
+    if (contrasena !== confirmarContrasena) {
+      group.get('confirmarContrasena')?.setErrors({ 'contrasenaMismatch': true });
+      return { 'contrasenaMismatch': true };
+    } else {
+      group.get('confirmarContrasena')?.setErrors(null);
+      return null;
+    }
   }
 
   registrarUsuario() {

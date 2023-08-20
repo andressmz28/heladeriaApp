@@ -20,6 +20,8 @@ import { AdminPedidosComponent } from './admin-pedidos/admin-pedidos.component';
 import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
 import { AdminHeladosComponent } from './admin-helados/admin-helados.component';
 
+
+
 const routes: Routes = [
   { path: '', component: FormularioComponent },
   { path: 'home', component: HomeComponent },
@@ -40,6 +42,7 @@ const routes: Routes = [
   { path: 'admin/pedidos', component: AdminPedidosComponent },
   { path: 'admin/usuarios', component: AdminUsuariosComponent },
   { path: 'admin/helados', component: AdminHeladosComponent },
+
 
 ];
 
