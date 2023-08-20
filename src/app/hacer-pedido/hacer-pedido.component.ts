@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { FormsModule } from '@angular/forms'; // Importa FormsModule
-import { MatSnackBar } from '@angular/material/snack-bar';
+// import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -31,7 +31,8 @@ export class HacerPedidoComponent implements OnInit {
 
   maxTopings: number = 3;
 
-  constructor(private apiService: ApiService,private snackBar: MatSnackBar) { }
+  //,private snackBar: MatSnackBar
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.apiService.getHelados().subscribe((data: any[]) => {
@@ -63,12 +64,12 @@ export class HacerPedidoComponent implements OnInit {
     }
   }
   mostrarAlerta(mensaje: string) {
-    this.snackBar.open(mensaje, '', {
-      duration: 3000, // Duración en milisegundos (opcional)
-      panelClass: [`alerta`],
-      horizontalPosition: 'center',
-      verticalPosition: 'top',
-    });
+    // this.snackBar.open(mensaje, '', {
+    //   duration: 3000, // Duración en milisegundos (opcional)
+    //   panelClass: [`alerta`],
+    //   horizontalPosition: 'center',
+    //   verticalPosition: 'top',
+    // });
   }
 
   topingDisabled(toping: any): boolean {
