@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  private usuario: any; // Variable para almacenar el usuario autenticado
 
   private apiUrl = 'http://localhost:8000/api'; // Cambia la URL según tu configuración de backend
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   getHelados(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/helados`);
@@ -290,6 +292,38 @@ export class ApiService {
     return this.http.post<any[]>(`${this.apiUrl}/helados/create`,
       form,
     );
+  }
+
+  login(correo: string, contrasena: string) {
+    return this.http.post<any>(`${this.apiUrl}/usuarios/login`, { correo, contrasena })
+      .subscribe(
+        (response) => {
+          if (response.usuario) {
+            this.usuario = response.usuario;
+            // Redirigir según el permiso_id
+            if (this.usuario.permiso_id === 1) {
+              localStorage.setItem("nombre", JSON.stringify(this.usuario.nombre))
+              localStorage.setItem("id", JSON.stringify(this.usuario.id))
+              this.router.navigate(['/admin']);
+            } else if (this.usuario.permiso_id === 2) {
+              localStorage.setItem("nombre", JSON.stringify(this.usuario.nombre))
+              localStorage.setItem("id", JSON.stringify(this.usuario.id))
+              localStorage.setItem("usuario", JSON.stringify(this.usuario))
+              this.router.navigate(['/home']);
+            }
+          } else {
+            // Mostrar mensaje de error en caso de credenciales incorrectas
+            console.error('Credenciales incorrectas');
+          }
+        },
+        (error) => {
+          console.error('Error en la solicitud de inicio de sesión', error);
+        }
+      );
+  }
+
+  getUsuario() {
+    return this.usuario;
   }
 
 }
