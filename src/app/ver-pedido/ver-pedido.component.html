@@ -107,7 +107,7 @@
                     <!-- <th>Id</th> -->
                     <th>Id</th>
                     <th>Helado</th>
-                    <th>Ingedientes</th>
+                    <th>Ingredientes</th>
                     <th>Action</th>
                 </tr>
                 <tr *ngFor="let tableData of dulces; let i = index;">
@@ -116,7 +116,7 @@
                     <td>{{tableData.nombre_helado}}</td>
                     <td>{{tableData.suma_total_ingredientes}}</td>
                     <td>
-                        <button class="btn btn-primary" data-bs-toggle="modal" (click)="edit(i, tableData)" data-bs-target="#exampleModal">Ingregientes <i class="fas fa-utensils"></i></button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" (click)="edit(i, tableData)" data-bs-target="#exampleModal">Ingredientes <i class="fas fa-utensils"></i></button>
                         <!-- <button class="btn btn-danger" style="margin-left: 20px;" (click)="delete(i, tableData)">Atendido <i class="fa fa-check"></i></button> -->
                     </td>
                 </tr>
