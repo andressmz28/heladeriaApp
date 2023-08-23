@@ -90,6 +90,9 @@ export class HacerPedidoComponent implements OnInit {
     // });
     console.log(pedidoData,this.selectedDulce, this.selectedEspecial,this.selectedFruta,this.selectedLicor,this.selectedSalsa);
 
+    if (this.selectedEndulsante === null) {
+      this.selectedEndulsante=0;
+    }
 
     this.apiService.hacerPedido(pedidoData).subscribe((pedidoCreado: any) => {
       const pedidoId = pedidoCreado.id;
@@ -97,13 +100,25 @@ export class HacerPedidoComponent implements OnInit {
       console.log(pedidoId);
 
       // Realizar los POST para las tablas relacionadas
-      this.apiService.crearDulcePedido(this.selectedDulce, pedidoId).subscribe();
-      this.apiService.crearEspecialPedido(this.selectedEspecial, pedidoId).subscribe();
-      this.apiService.crearFrutaPedido(this.selectedFruta, pedidoId).subscribe();
-      this.apiService.crearLicorPedido(this.selectedLicor, pedidoId).subscribe();
-      this.apiService.crearSalsaPedido(this.selectedSalsa, pedidoId).subscribe();
+      if (this.selectedDulce != undefined) {
+        this.apiService.crearDulcePedido(parseInt(this.selectedDulce), pedidoId).subscribe();
+      }
+      if (this.selectedEspecial != undefined) {
+        this.apiService.crearEspecialPedido(parseInt(this.selectedEspecial), pedidoId).subscribe();
+      }
+      if (this.selectedFruta != undefined) {
+        this.apiService.crearFrutaPedido(parseInt(this.selectedFruta), pedidoId).subscribe();
+      }
+      if (this.selectedLicor != undefined) {
+        this.apiService.crearLicorPedido(parseInt(this.selectedLicor), pedidoId).subscribe();
+      }
+      if (this.selectedSalsa != undefined) {
+        this.apiService.crearSalsaPedido(parseInt(this.selectedSalsa), pedidoId).subscribe();
+      }
+      if (this.selectedTopings != undefined) {
+        this.apiService.crearTopingPedido(parseInt(this.selectedTopings), pedidoId).subscribe();
+      }
 
-      this.apiService.crearTopingPedido(this.selectedTopings, pedidoId).subscribe();
 
       // Aquí puedes redirigir a la pantalla de ver-pedido con el ID del pedido creado
       console.log("Se envio el post");
