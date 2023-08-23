@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class VerPedidoComponent implements OnInit{
 
-  userId: number = 1; // Cambia esto según el ID de usuario deseado
+
+  userId:any;
 
   saborHelado!: string;
   frutasAcompanamiento!: string;
@@ -39,6 +40,7 @@ export class VerPedidoComponent implements OnInit{
 
   ngOnInit() {
     // Valores iniciales de ejemplo (pueden ser reemplazados por los datos reales del pedido)
+    this.userId = localStorage.getItem("id")
     this.saborHelado = 'Vainilla';
     this.frutasAcompanamiento = 'Fresas';
     this.salsaAderezo = 'Chocolate';

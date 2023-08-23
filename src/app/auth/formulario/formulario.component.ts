@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/auth/login.service';
 import { LoginRequest } from 'src/app/services/auth/loginRequest';
+import { ApiService } from '../../services/api.service';
 
 
 
@@ -12,11 +13,28 @@ import { LoginRequest } from 'src/app/services/auth/loginRequest';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
+
+  correo: any;
+  contrasena:any;
+
   loginForm=this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
     contraseña: ['', Validators.required],
   })
-  constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService, private apiService: ApiService) { }
+
+  ngOnInit() {
+    const usuario = this.apiService.getUsuario();
+    if (usuario) {
+      console.log('Usuario autenticado:', usuario);
+    }
+  }
+
+  iniciarSesion() {
+    this.correo = this.loginForm.value.email;
+    this.contrasena = this.loginForm.value.contraseña;
+    this.apiService.login(this.correo, this.contrasena);
+  }
 
   get email(){
     return this.loginForm.controls.email;

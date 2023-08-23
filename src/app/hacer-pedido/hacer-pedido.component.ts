@@ -28,6 +28,7 @@ export class HacerPedidoComponent implements OnInit {
   salsas: any[] = [];
   topings: any[] = [];
   licores: any[] = [];
+  userId: any
 
   maxTopings: number = 3;
 
@@ -35,6 +36,7 @@ export class HacerPedidoComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.userId = localStorage.getItem("id")
     this.apiService.getHelados().subscribe((data: any[]) => {
       this.helados = data;
     });
@@ -79,7 +81,7 @@ export class HacerPedidoComponent implements OnInit {
   realizarPedido() {
     const pedidoData = {
       endulsante: this.selectedEndulsante,
-      user_id: '1',
+      user_id: this.userId,
       helado_id: this.selectedHelado,
 
       // Agregar más datos según la estructura de tu pedido
