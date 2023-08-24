@@ -4,21 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../crear-usuario/crear-usuario.component.css">
- 
 </head>
 <body>
-
   <div class="container-fluid background-image-container d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #f7f7f7;">
     <div class="form-container">
       <form [formGroup]="userForm" class="form" (ngSubmit)="registrarUsuario()">
         <p class="title">Registro</p>
         <p class="message" style="font-size: 17px;">Regístrese ahora y obtenga acceso completo a nuestra aplicación.</p>
-  
+
         <div class="flex">
           <label>
             <input type="text" formControlName="nombre" placeholder="Nombre" class="input">
           </label>
-  
           <label>
             <input type="text" formControlName="apellido" placeholder="Apellido" class="input">
           </label>
@@ -28,12 +25,17 @@
           <input type="email" formControlName="correo" placeholder="Correo" class="input">
         </label>
         
-  
         <label>
           <input type="password" formControlName="contrasena" placeholder="Contraseña" class="input">
+        
+        
         </label>
+       
+        
+      
         <label>
           <input type="password" formControlName="confirmarContrasena" placeholder="Confirmar contraseña" class="input">
+          
           <div *ngIf="userForm.hasError('contrasenaMismatch', 'confirmarContrasena')" class="error-message">
             Las contraseñas no coinciden.
           </div>
@@ -47,19 +49,12 @@
   </div>
   <app-footer></app-footer>
 
-  
-  
-  
-  
-  
-  
-
-<script>
-  // Limpiar los campos al recargar la página
-  document.addEventListener("DOMContentLoaded", function () {
-    const inputs = document.querySelectorAll(".input");
-    inputs.forEach(input => input.value = "");
-  });
-</script>
+  <script>
+    // Limpiar los campos al recargar la página
+    document.addEventListener("DOMContentLoaded", function () {
+      const inputs = document.querySelectorAll(".input");
+      inputs.forEach(input => input.value = "");
+    });
+  </script>
 </body>
 </html>

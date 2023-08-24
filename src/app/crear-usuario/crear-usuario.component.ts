@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class CrearUsuarioComponent implements OnInit {
   userForm!: FormGroup;
   errorContrasena = false;
+  showPassword = false;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
 
@@ -67,6 +68,11 @@ export class CrearUsuarioComponent implements OnInit {
 
   limpiarMensajeError() {
     this.errorContrasena = false;
+  }
+
+  toggleShowPassword() {
+    this.showPassword = !this.showPassword;
+
   }
 }
 

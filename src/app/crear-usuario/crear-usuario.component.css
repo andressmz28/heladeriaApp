@@ -85,18 +85,15 @@
   color: green;
 }
 
-
-@keyframes pulse {
-  from {
-    transform: scale(0.9);
-    opacity: 1;
-  }
-
-  to {
-    transform: scale(1.8);
-    opacity: 0;
-  }
+.password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
+
+
 /* Estilos personalizados para el formulario */
 .form {
 width: 100%; /* Cambiamos el valor a 100% para que ocupe todo el ancho disponible */
@@ -122,6 +119,7 @@ padding-left: 30px;
 }
 
 
+
 .submit {
 padding: 10px;
 width: 50%; 
@@ -135,17 +133,16 @@ font-size: 22px;
 transform: .3s ease;
 }
 
-
 .submit:hover {
 background-color: #eb636b;
 }
 
 .form-container {
-  width: 90%; /* Ajustar el ancho del contenedor del formulario */
-  max-width: 600px; /* Ancho máximo del contenedor */
+  width: 90%; 
+  max-width: 600px; 
   margin: 0 auto;
   background-color: #ffffff;
-  padding: 40px; /* Aumentar el espacio de relleno */
+  padding: 40px; 
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -188,6 +185,8 @@ border-radius: 5px;
 cursor: pointer;
 }
 
+
+
 .signin {
 font-size: 14px;
 color: #888888;
@@ -197,3 +196,4 @@ color: #888888;
 color: #eb636b;
 text-decoration: none;
 }
+
