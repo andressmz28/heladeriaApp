@@ -4,46 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="">
-
 </head>
 <body>
 
 <div class="container-fluid background-image-container d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #f7f7f7;">
-<div class="wrapper bg-white">
+  <div class="wrapper bg-white">
     <div class="h2 text-center">WOW Gelatto</div>
     <div class="h4 text-muted text-center pt-2">Iniciar sesión</div>
-  <br>
-        <img src="assets/images/lex.jpg" style=" max-width: 90px; max-height: 90px;  display: block; margin: 0 auto">
+    <br>
+    <img src="assets/images/lex.jpg" style="max-width: 90px; max-height: 90px; display: block; margin: 0 auto">
 
     <form [formGroup]="loginForm" class="pt-3">
-        <div class="form-group py-2">
-            <div class="input-field">  <input formControlName="email" type="text" placeholder="Correo" required class=""> </div>
+      <div class="form-group py-2">
+        <div class="input-field">
+          <input formControlName="email" type="text" placeholder="Correo" required class="">
         </div>
-                <div *ngIf="email.invalid && (email.dirty || email.touched)"
-                class="text-danger">
-
-                <div *ngIf="email.errors?.['required']">
-                    El email es requerido.
-                </div>
-                <div *ngIf="email.errors?.['email']">
-                    El email debe tener un formato valido.
-                </div>
+      </div>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+        <div *ngIf="email.errors?.['required']">El email es requerido.</div>
+        <div *ngIf="email.errors?.['email']">El email debe tener un formato valido.</div>
+      </div>
+      <div class="form-group py-1 pb-2">
+        <div class="input-field">
+          <input
+            formControlName="contraseña"
+            [type]="isPasswordVisible ? 'text' : 'password'"
+            placeholder="Contraseña"
+            required
+            class="">
+          
+         
         </div>
-        <div class="form-group py-1 pb-2">
-            <div class="input-field">  <input formControlName="contraseña" type="text" placeholder="Contraseña" required class=""> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
-        </div>
-        <div *ngIf="password.invalid && (password.dirty || password.touched)"
-                class="text-danger">
-
-                <div *ngIf="password.errors?.['required']">
-                    La contraseña es requerida.
-                </div>
-            </div>
-        <div class="d-flex align-items-start">
-            <div class="ml-auto"> <a href="/recuperar-contrasena" id="forgot">Olvidó su contraseña?</a> </div>
-        </div> <button (click)="iniciarSesion()" class="btn btn-block text-center my-3">Iniciar sesión</button>
-        <div class="text-center pt-3 text-muted">No es un miembro? <a href="/crear-usuario">Registrarse</a></div>
+      </div>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+        <div *ngIf="password.errors?.['required']">La contraseña es requerida.</div>
+      </div>
+      <div class="d-flex align-items-start">
+        <div class="ml-auto"> <a href="/recuperar-contrasena" id="forgot">Olvidó su contraseña?</a> </div>
+      </div>
+      <button (click)="iniciarSesion()" class="btn btn-block text-center my-3">Iniciar sesión</button>
+      <div class="text-center pt-3 text-muted">No es un miembro? <a href="/crear-usuario">Registrarse</a></div>
     </form>
-</div>
+  </div>
 
-    <app-footer></app-footer>
+  <app-footer></app-footer>
+</div>
+</body>
+</html>
