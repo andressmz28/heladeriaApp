@@ -27,6 +27,20 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
+        <li>
+          <a class="shopping-container" routerLink="/hacer-pedido">
+            <div class="shopping shopping2">
+              <i class="fas fa-shopping-basket"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="shopping-container" routerLink="/ver-pedido">
+            <div class="shopping shopping2">
+              <i class="fas fa-list"></i>
+            </div>
+          </a>
+        </li>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -143,11 +157,11 @@
           </select>
         </div>
       </div>
-      <div class="row" style="height: 150px; padding: 15px 150px 0px 150px; background-color: #f19fa4; ">
+      <div class="row" style="height: 150px; padding: 15px 150px 15% 150px; background-color: #f19fa4; ">
 
         <div class="col">
           <!-- Botón para confirmar el pedido -->
-          <button class="btn btn-block" (click)="realizarPedido()">Confirmar Pedido</button>
+          <button class="btn btn-block" (click)="realizarPedido()" routerLink="/ver-pedido">Confirmar Pedido</button>
         </div>
       </div>
 
