@@ -1,5 +1,72 @@
 #restaurant-section,.info-area{background-size:cover;background-position:center}.nav-link,button.button{cursor:pointer}.fondo-blanco{color:#fff}.container{display:contents;flex-direction:column}.custom-img{width:50px;height:50px}.btn{margin:30px}.slider-container{margin:0 auto;display:flex;justify-content:center;align-items:center}.img-slider{width:100%;height:auto}.justificado{text-align:justify}.img-mas-grande{width:100%;height:5%;object-fit:cover}button.button{display:flex;align-items:center;justify-content:center;transition:.3s linear;border-radius:10px;border:1px solid #bedbf2;padding:10px 20px}button.button>svg{margin-left:5px;transition:.4s ease-in}button.button:hover>svg{font-size:1.2em;transform:translateX(6px)}button.button:hover{box-shadow:10px 10px 40px #d1d1d1;transform:translateY(-5px)}.shopping.shopping2{width:40px;height:40px;background-color:white;margin-right:10px;display:flex;align-items:center;justify-content:center;color: black;border-radius:50%;text-align:center;transition:.3s;position:relative}.common-title4 h1 span{color:#76459d}.common-title4 h2 span,.common-title4 h3{color:#eb636b}.common-title-area.padding-50 h2 span,.container .common-title-area.padding-50 h3{color:#df4a64}.info-area{background-image:url("../../assets/images/j.jpg"),url("../../assets/images/fondo3.png");background-repeat:no-repeat}#restaurant-section{position:relative;background-image:url("../../assets/images/fondo3.png");background-repeat:no-repeat;padding:20px}#restaurant-section>.row.bg-light{background-color:rgba(255,255,255,.8);padding:30px;border-radius:10px}.menu-area.home2-menu-area.padding-bottom-10:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-image:url("/assets/images/fondo0.jpg");background-size:cover;background-position:center;z-index:-1}.menu-area .menu-nav-wrapper .nav-link.active .single-menu-nav::after{position:absolute;content:"";width:100%;height:100%;top:0;left:0;background:#df4a64;visibility:visible;opacity:.9;z-index:-1;transition:.5s}.menu-area .menu-nav-wrapper .nav-link.active .single-menu-nav h6{color:#fff;transition:.5s}.menu-area .menu-items-wrapper hr{border:1px dashed #df4a64}.menu-area .menu-items-wrapper a.btn{text-align:center}.menu-area .menu-items-wrapper a.btn:hover{border:1px solid #df4a64;background:0 0;color:ea899a}.single-menu-nav{width:150px;height:150px;padding:25px 30px;border:1px solid #e6e6e6;border-radius:5px;position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;transition:.5s;cursor:pointer}.single-menu-nav::after{position:absolute;content:"";width:100%;height:100%;top:0;left:0;visibility:hidden;opacity:0;background:#df4a64;transition:.5s}
 
+.hidden {
+  display: none;
+}
+#button-container {
+ 
+ 
+  position: fixed;
+  bottom:60px;
+  right: 60px; /* Ajusta este valor para moverlo más a la derecha */
+  z-index: 9999;
+}
+
+.button.custom-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #F4F7F5;
+  border: none;
+  border-radius: 50%; /* Cambia el radio para que sea un círculo */
+  height: 60px; /* Aumenta el tamaño de los botones */
+  width: 60px; /* Aumenta el tamaño de los botones */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in;
+}
+
+#share {
+  color: #DC0654;
+  background: #fbe6ed;
+}
+
+
+#instagram {
+  background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCB045);
+}
+
+#facebook {
+  background: linear-gradient(-160deg, #00D2FF, #3A7BD5);
+}
+
+
+
+
+#button-container:hover .button.custom-button {
+  transform: rotate(360deg) scale(1.2); /* Ajusta la escala para que sea más grande */
+}
+
+#button-container:hover #share {
+  transform: rotate(270deg) scale(1.2); /* Ajusta la escala para que sea más grande */
+}
+
+
+
+#button-container:hover > #facebook {
+  transform: translate(-30%, -200%); /* Ajusta la distancia horizontal y vertical */
+}
+
+
+
+
+#button-container:hover > #instagram {
+  transform: translate(-200%, -100%); /* Ajusta la distancia horizontal y vertical */
+}
+
 
 
 body {
