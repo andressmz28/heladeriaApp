@@ -29,6 +29,7 @@ import { AdminLicoresComponent } from './admin-licores/admin-licores.component';
 import { AdminPedidosComponent } from './admin-pedidos/admin-pedidos.component';
 import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
 import { AdminHeladosComponent } from './admin-helados/admin-helados.component';
+import { CodigoRecuperacionComponent } from './codigo-recuperacion/codigo-recuperacion.component';
 
 
 
@@ -56,7 +57,8 @@ import { AdminHeladosComponent } from './admin-helados/admin-helados.component';
 
     AdminPedidosComponent,
     AdminUsuariosComponent,
-    AdminHeladosComponent
+    AdminHeladosComponent,
+    CodigoRecuperacionComponent
   ],
   imports: [
     BrowserModule,

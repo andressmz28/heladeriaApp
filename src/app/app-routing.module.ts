@@ -19,6 +19,7 @@ import { AdminLicoresComponent } from './admin-licores/admin-licores.component';
 import { AdminPedidosComponent } from './admin-pedidos/admin-pedidos.component';
 import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
 import { AdminHeladosComponent } from './admin-helados/admin-helados.component';
+import { CodigoRecuperacionComponent } from './codigo-recuperacion/codigo-recuperacion.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'crear-usuario', component: CrearUsuarioComponent},
   { path: 'pedido', component: PedidoComponent },
   { path: 'recuperar-contrasena', component: RecuperarContrasenaComponent },
+  { path: 'codigo-recuperacion', component: CodigoRecuperacionComponent },
   {path: 'crear-usuario', component: CrearUsuarioComponent},
   { path: 'iniciar-sesion', component: IniciarSesionComponent },
   { path: 'admin', component: AdminHomeComponent },
