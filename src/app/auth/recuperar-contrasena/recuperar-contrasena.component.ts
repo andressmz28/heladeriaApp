@@ -1,8 +1,8 @@
+// RecuperarContrasenaComponent.ts
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
-import { ToastrService } from 'ngx-toastr'; // O la ruta correcta al módulo ToastrService
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http'; // Importa el módulo HttpClient
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-recuperar-contrasena',
@@ -11,11 +11,10 @@ import { ToastrService } from 'ngx-toastr'; // O la ruta correcta al módulo Toa
 })
 export class RecuperarContrasenaComponent {
   recuperarContrasenaForm: FormGroup;
-  showToast: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService,
+    private http: HttpClient, // Inyecta HttpClient
     private toastr: ToastrService
   ) {
     this.recuperarContrasenaForm = this.formBuilder.group({
@@ -30,19 +29,26 @@ export class RecuperarContrasenaComponent {
   recuperarContrasena() {
     if (this.recuperarContrasenaForm.invalid) {
       this.toastr.error('Por favor, ingrese un correo válido.', 'Error');
-      return; // No realizar la solicitud si el formulario no es válido
+      return;
     }
 
     const email = this.email?.value;
-    this.authService.solicitarRecuperacionContrasena(email).subscribe(
-      response => {
-        this.toastr.success('Se ha enviado la solicitud de recuperación de contraseña.', 'Éxito');
-        console.log('Solicitud de recuperación de contraseña enviada');
+    const apiUrl = 'http://localhost:8000/api/recuperar-contrasena';
+
+    // URL para recuperación de contraseña
+ // URL para recuperación de contraseña
+
+    // Envía la solicitud HTTP POST a la URL de Laravel para la recuperación de contraseña
+    this.http.post(apiUrl, { email }).subscribe(
+      (response: any) => { // Corrige el tipo de respuesta a 'any'
+        // Muestra el mensaje de éxito del servidor
+        console.log('Éxito:', response.message);
       },
       error => {
-        this.toastr.error('Ocurrió un error al enviar la solicitud de recuperación de contraseña.', 'Error');
-        console.error('Error al enviar la solicitud de recuperación de contraseña');
+        // Muestra el mensaje de error del servidor
+        console.error('Error al enviar la solicitud de recuperación de contraseña:', error);
       }
     );
+    
   }
 }
