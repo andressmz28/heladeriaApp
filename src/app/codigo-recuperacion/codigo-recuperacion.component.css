@@ -86,7 +86,11 @@
     cursor: pointer;
   }
 
-  
+ /* Agrega margen derecho entre los input */
+.otp-container .otp-input {
+  margin-right: 10px; /* Puedes ajustar el valor según tus preferencias */
+}
+ 
   .background-image-container {
     position: relative;
     background-image: url("../../assets/images/pl.jpg");

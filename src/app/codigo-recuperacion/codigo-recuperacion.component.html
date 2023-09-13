@@ -4,35 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="">
- 
 </head>
 <body>
 
 <div class="container-fluid background-image-container d-flex align-items-center justify-content-center" style="height: 100vh; background-color: #f7f7f7;">
-<div class="wrapper bg-white">
+  <div class="wrapper bg-white">
+    <br>
+    <img src="assets/images/lex.jpg" style="max-width: 90px; max-height: 90px; display: block; margin: 0 auto">
+    
+    <form class="otp-Form" (submit)="verificarCodigo()">
+      <span class="mainHeading">Ingresa tu código:</span>
+      <p class="otpSubheading">Nosotros te enviamos un código a tu correo</p>
+      <div class="inputContainer">
   
-  <br>
-        <img src="assets/images/lex.jpg" style=" max-width: 90px; max-height: 90px;  display: block; margin: 0 auto">
-     
-        <form class="otp-Form">
- 
-            <span class="mainHeading">Ingresa tu codigo:</span>
-            <p class="otpSubheading">Nosotros te enviamos un codigo a tu correo</p>
-            <div class="inputContainer">
-             <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input1">
-             <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input2">
-             <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input3">
-             <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input4"> 
-             
-            </div>
-             <button class="verifyButton" type="submit">Verificar</button>
-         
-               <p class="resendNote">No recibiste el codigo? <button class="resendBtn">Reenviar codigo</button></p>
-               
-          </form>
-          
-          
-          
+        <div class="otp-container">
+          <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input1">
+          <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input2">
+          <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input3">
+          <input required="required" maxlength="1" type="text" class="otp-input" id="otp-input4">
+        </div>
+        
+        
+    
+        
+      </div>
+      <button class="verifyButton" type="submit">
+        <a href="/actualizar-contrasena" style="color: white; text-decoration: none;">Verificar</a>
+      </button>
+      
+      <p *ngIf="codigoIncorrecto" class="codigoIncorrectoMensaje">Código incorrecto</p>
+      <p class="resendNote">No recibiste el código? <button class="resendBtn">Reenviar código</button></p>
+      <!-- Mostrar mensaje de "Código correcto" si codigoCorrecto es true -->
+      <p *ngIf="codigoCorrecto" class="codigoCorrectoMensaje">Código correcto</p>
+    </form>
+    
+    <app-footer></app-footer>
+  </div>
 </div>
 
-<app-footer></app-footer>
+</body>
+</html>
