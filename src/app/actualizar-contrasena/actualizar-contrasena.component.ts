@@ -1,46 +1,46 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-actualizar-contrasena',
   templateUrl: './actualizar-contrasena.component.html',
   styleUrls: ['./actualizar-contrasena.component.css']
 })
-export class ActualizarContrasenaComponent {
-  // Cambia el nombre del formulario para que coincida con el nombre en el HTML
-  form: FormGroup;
+export class ActualizarContrasenaComponent implements OnInit {
+  nuevaContrasena: string = ''; // Propiedad para almacenar la nueva contraseña
+  correoRecuperacion: string = ''; // Propiedad para almacenar el correo de recuperación
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private http: HttpClient,
-    private toastr: ToastrService
-  ) {
-    // Cambia el nombre del formulario aquí también
-    this.form = this.formBuilder.group({
-      contrasena: [''],
-      confirmarContrasena: ['']
-    });
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    // Recupera el correo de recuperación desde sessionStorage
+    this.correoRecuperacion = sessionStorage.getItem('correo_recuperacion') || '';
   }
 
   actualizarContrasena() {
-    const apiUrl = 'http://localhost:8000/api/actualizar-contrasena'; // Reemplaza con la URL correcta
+    // Realiza la solicitud HTTP aquí
+    const apiUrl = 'http://localhost:8000/api/actualizar-contrasena';
 
-    const datos = {
-      contrasena: this.form.value.contrasena,
-      confirmarContrasena: this.form.value.confirmarContrasena
-    };
+    // Verifica si el correo de recuperación existe
+    if (this.correoRecuperacion) {
+      console.log('Correo de recuperación:', this.correoRecuperacion);
+      console.log('Nueva contraseña:', this.nuevaContrasena); // Agregado para depuración
 
-    this.http.post(apiUrl, datos).subscribe(
-      (response: any) => {
-        // Manejar la respuesta de éxito desde el backend
-        this.toastr.success('Contraseña actualizada con éxito', 'Éxito');
-      },
-      (error: any) => {
-        // Manejar el error desde el backend
-        this.toastr.error('Error al actualizar la contraseña', 'Error');
-      }
-    );
+      // Luego, puedes realizar la solicitud HTTP y enviar el correo de recuperación y la nueva contraseña como parte de los datos de la solicitud.
+      // Asegúrate de que los datos de la solicitud se envíen correctamente al servidor.
+      this.http.post(apiUrl, { contrasena: this.nuevaContrasena, correoRecuperacion: this.correoRecuperacion }).subscribe(
+        (response) => {
+          console.log('Respuesta del servidor:', response);
+          // Realiza acciones adicionales después de la actualización exitosa
+        },
+        (error) => {
+          console.error('Error en la solicitud:', error);
+          // Maneja el error de la solicitud HTTP
+        }
+      );
+    } else {
+      console.error('El correo de recuperación no está definido.');
+      // Maneja el caso en el que el correo de recuperación no esté definido
+    }
   }
 }

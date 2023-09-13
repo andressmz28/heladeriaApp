@@ -70,6 +70,7 @@ import { ActualizarContrasenaComponent } from './actualizar-contrasena/actualiza
     ReactiveFormsModule,
     CommonModule,
     BrowserAnimationsModule,
+    
     ToastrModule.forRoot(), // ToastrModule added
   ],
 

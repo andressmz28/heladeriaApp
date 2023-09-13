@@ -20,21 +20,22 @@
               <h2 class="text-4xl text-black">Actualizar contraseña</h2>
             </div>
           </div>
-          <form [formGroup]="form" (ngSubmit)="actualizarContrasena()">
+          <form (submit)="actualizarContrasena()">
             <div class="mt-4 space-y-6">
               <div class="col-span-full">
-                <label class="block mb-3 text-sm font-medium text-gray-600"> Contraseña   </label>
-                <input type="password" formControlName="contrasena" placeholder="******" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 rounded-full appearance-none placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
+                <label class="block mb-3 text-sm font-medium text-gray-600">Nueva Contraseña </label>
+                <input type="password" name="contrasena" [(ngModel)]="nuevaContrasena" placeholder="******" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 rounded-full appearance-none placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
+
+
+
               </div>
+              
               <div class="col-span-full">
-                <label class="block mb-3 text-sm font-medium text-gray-600"> Confirmar contraseña    </label>
-                <input type="password" formControlName="confirmarContrasena" placeholder="******" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 rounded-full appearance-none placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
-              </div>
-              <div class="col-span-full">
-                <button type="submit" class="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full nline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"> Envie su solicitud  </button>
+                <button type="submit" class="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-black border-2 border-black rounded-full inline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"> Envie su solicitud </button>
               </div>
             </div>
           </form>
+          
         </div>
       </div>
     </section>
