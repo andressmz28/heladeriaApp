@@ -227,7 +227,7 @@
       <div class="details">
           <div class="recentOrders ">
               <div class="cardHeader">
-                  <h2>Pedidos pendientes</h2>
+                  <h2>Pedidos pendientes.</h2>
                   <!-- <button class="btn btn-light" style="float: right;" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addmodel()">Agregar</button> -->
 
               </div>
@@ -235,20 +235,20 @@
               <table>
                 <tr>
                     <!-- <th>Id</th> -->
-                    <th>Id</th>
+                    <th>Id Cliente</th>
                     <th>Cliente</th>
-                    <th>Helado</th>
-                    <th>Ingedientes</th>
+                    <th>Ordenes</th>
+                    <th>Total</th>
                     <th>Action</th>
                 </tr>
                 <tr *ngFor="let tableData of dulces; let i = index;">
                     <!-- <td>{{i+1}}</td> -->
-                    <td>{{tableData.id}}</td>
-                    <td>{{tableData.nombre_usuario}}</td>
-                    <td>{{tableData.nombre_helado}}</td>
-                    <td>{{tableData.suma_total_ingredientes}}</td>
+                    <td>{{tableData.user_id}}</td>
+                    <td>{{tableData.user_nombre}}</td>
+                    <td>{{tableData.pedidos_count}}</td>
+                    <td>{{tableData.total_dinero_pedidos}}</td>
                     <td>
-                        <button class="btn btn-primary" data-bs-toggle="modal" (click)="edit(i, tableData)" data-bs-target="#exampleModal">Ingregientes <i class="fas fa-utensils"></i></button>
+                        <button class="btn btn-primary"  (click)="edit(i, tableData)" >Ver pedido <i class="fas fa-angle-double-right	"></i></button>
                         <button class="btn btn-danger" style="margin-left: 20px;" (click)="delete(i, tableData)">Atendido <i class="fa fa-check"></i></button>
                     </td>
                 </tr>

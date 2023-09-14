@@ -122,20 +122,25 @@
                     <th>Id</th>
                     <th>Helado</th>
                     <th>Ingredientes</th>
+                    <th>Precio($)</th>
                     <th>Action</th>
                 </tr>
                 <tr *ngFor="let tableData of dulces; let i = index;">
                     <!-- <td>{{i+1}}</td> -->
-                    <td>{{tableData.id}}</td>
+                    <td>{{tableData.id_pedido}}</td>
                     <td>{{tableData.nombre_helado}}</td>
-                    <td>{{tableData.suma_total_ingredientes}}</td>
+                    <td>{{tableData.suma_total_ingredientes_pedido}}</td>
+                    <td>{{tableData.suma_total_precio_pedido}}</td>
                     <td>
-                        <button class="btn btn-primary" data-bs-toggle="modal" (click)="edit(i, tableData)" data-bs-target="#exampleModal">Ingredientes <i class="fas fa-utensils"></i></button>
-                        <!-- <button class="btn btn-danger" style="margin-left: 20px;" (click)="delete(i, tableData)">Atendido <i class="fa fa-check"></i></button> -->
+                        <!-- <button class="btn btn-primary" data-bs-toggle="modal" (click)="edit(i, tableData)" data-bs-target="#exampleModal">Ingredientes <i class="fas fa-utensils"></i></button> -->
+                        <button class="btn btn-danger" style="margin-left: 20px;" (click)="delete(i, tableData)">Eliminar <i class="fa fa-check"></i></button>
                     </td>
                 </tr>
             </table>
           </div>
+        </div>
+        <div class="cardHeader">
+             <h2>Total del pedido ${{this.sumaTotalPedidos}} </h2>
         </div>
         <!-- <div class="row">
           <div class="col">
@@ -222,6 +227,7 @@
       </div>
   </div>
 </div>
+
 
   <!-- <footer class="footer">
     <div class="container">

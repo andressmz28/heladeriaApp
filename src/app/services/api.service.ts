@@ -326,4 +326,32 @@ export class ApiService {
     return this.usuario;
   }
 
+  eliminarPedido(id: number): Observable<any> {
+    const url = `${this.apiUrl}/pedidos/eliminar/${id}`;
+    return this.http.delete(url);
+  }
+
+  getSumaTotalPedidos(userId: number): Observable<any> {
+    const url = `${this.apiUrl}/pedidos/totalPedido/${userId}`;
+    return this.http.get(url);
+  }
+
+  getUsersPedidos(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/usuarios/usuariosPedidos`);
+  }
+
+  eliminarPedidosUsuario(userId: number): Observable<any> {
+    const url = `${this.apiUrl}/usuarios/${userId}/borrar-pedidos`;
+    return this.http.delete(url);
+  }
+
+  marcarPedidosComoAtendidos(userId: number): Observable<any> {
+    const url = `${this.apiUrl}/pedidos/marcar-pedidos/${userId}`;
+    return this.http.post(url, {});
+  }
+
+  pedidosUsuariosAdmin2(userId: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/pedidos/${userId}/con-suma-ingredientes`);
+  }
+
 }

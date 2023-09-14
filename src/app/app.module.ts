@@ -31,6 +31,8 @@ import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.componen
 import { AdminHeladosComponent } from './admin-helados/admin-helados.component';
 import { CodigoRecuperacionComponent } from './codigo-recuperacion/codigo-recuperacion.component';
 import { ActualizarContrasenaComponent } from './actualizar-contrasena/actualizar-contrasena.component';
+import { AdminPedidosV2Component } from './admin-pedidos-v2/admin-pedidos-v2.component';
+import { AdminPedidosV3Component } from './admin-pedidos-v3/admin-pedidos-v3.component';
 
 
 
@@ -60,7 +62,9 @@ import { ActualizarContrasenaComponent } from './actualizar-contrasena/actualiza
     AdminUsuariosComponent,
     AdminHeladosComponent,
     CodigoRecuperacionComponent,
-    ActualizarContrasenaComponent
+    ActualizarContrasenaComponent,
+    AdminPedidosV2Component,
+    AdminPedidosV3Component
   ],
   imports: [
     BrowserModule,
@@ -70,7 +74,7 @@ import { ActualizarContrasenaComponent } from './actualizar-contrasena/actualiza
     ReactiveFormsModule,
     CommonModule,
     BrowserAnimationsModule,
-    
+
     ToastrModule.forRoot(), // ToastrModule added
   ],
 

@@ -35,6 +35,8 @@ export class VerPedidoComponent implements OnInit{
   pedidoId: number=0
   username:any;
   usernameShow:any;
+  sumaTotalPedidos: number = 0;
+  errorMensaje: string = '';
 
   constructor( private router: Router, private apiService: ApiService) { }
 
@@ -54,7 +56,7 @@ export class VerPedidoComponent implements OnInit{
      })
     this.getdata();
     this.pedidosUsuariosAdmin();
-
+    this.getSumaTotalPedidos();
   }
 
   modificar() {
@@ -114,11 +116,31 @@ export class VerPedidoComponent implements OnInit{
    getdata(){
      this.apiService.pedidosUsuarioCliente(this.userId).subscribe((data: any[]) => {
        this.dulces = data;
+       console.log(this.dulces)
      });
+
      // this._dataservice.getdata().subscribe(res=>{
      //   this.data = res;
      // })
    }
+
+   getSumaTotalPedidos(){
+    this.apiService.getSumaTotalPedidos(this.userId).subscribe(
+      (response) => {
+        if (Array.isArray(response) && response.length > 0) {
+          // Accede al primer elemento del arreglo y conviértelo a número
+          this.sumaTotalPedidos = +response[0];
+          console.log('Suma total de pedidos:', this.sumaTotalPedidos);
+        } else {
+          this.errorMensaje = 'Respuesta inesperada del servidor';
+        }
+      },
+      (error) => {
+        console.error('Error al obtener la suma total de pedidos:', error);
+        this.errorMensaje = 'Error en la solicitud al servidor';
+      }
+    );
+  }
 
    addmodel(){
      this.isedit=false;
@@ -170,17 +192,16 @@ export class VerPedidoComponent implements OnInit{
      this.formulario.id= tableData.id;
      console.log( this.formulario.id)
      this.dulces.splice(index, 1);
-     this.apiService.marcarComoAtendido( this.formulario.id)
-      .subscribe(
-        () => {
-          console.log('Pedido marcado como atendido con éxito');
-          // Puedes realizar otras acciones después de marcar como atendido, como actualizar la vista.
-        },
-        (error) => {
-          console.error('Error al marcar como atendido:', error);
-        }
-      );
-   }
+     this.apiService.eliminarPedido(this.formulario.id).subscribe(
+      () => {
+        console.log('Pedido eliminado correctamente.');
+        // Realiza cualquier otra acción que desees después de eliminar el pedido.
+      },
+      (error) => {
+        console.error('Error al eliminar el pedido:', error);
+      }
+    );
+    }
 
   //Sidebar toggle show hide function
 status = false;
