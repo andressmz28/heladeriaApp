@@ -23,6 +23,7 @@ import { CodigoRecuperacionComponent } from './codigo-recuperacion/codigo-recupe
 import { ActualizarContrasenaComponent } from './actualizar-contrasena/actualizar-contrasena.component';
 import { AdminPedidosV2Component } from './admin-pedidos-v2/admin-pedidos-v2.component';
 import { AdminPedidosV3Component } from './admin-pedidos-v3/admin-pedidos-v3.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'hacer-pedido', component: HacerPedidoComponent },
   { path: 'ver-pedido', component: VerPedidoComponent },
+  { path: 'reporte', component: ReporteComponent },
   { path: 'crear-usuario', component: CrearUsuarioComponent},
   { path: 'pedido', component: PedidoComponent },
   { path: 'recuperar-contrasena', component: RecuperarContrasenaComponent },

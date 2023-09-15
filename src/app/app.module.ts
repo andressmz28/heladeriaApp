@@ -33,6 +33,7 @@ import { CodigoRecuperacionComponent } from './codigo-recuperacion/codigo-recupe
 import { ActualizarContrasenaComponent } from './actualizar-contrasena/actualizar-contrasena.component';
 import { AdminPedidosV2Component } from './admin-pedidos-v2/admin-pedidos-v2.component';
 import { AdminPedidosV3Component } from './admin-pedidos-v3/admin-pedidos-v3.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 
 
@@ -64,7 +65,8 @@ import { AdminPedidosV3Component } from './admin-pedidos-v3/admin-pedidos-v3.com
     CodigoRecuperacionComponent,
     ActualizarContrasenaComponent,
     AdminPedidosV2Component,
-    AdminPedidosV3Component
+    AdminPedidosV3Component,
+    ReporteComponent
   ],
   imports: [
     BrowserModule,
